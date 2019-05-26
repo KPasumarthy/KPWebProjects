@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title ng-bind="angJQuerySpin"></title>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+</head>
+<body>
+    @{
+        ViewBag.Title = "AngularJS-HelloWorld";
+    }
+    <h2>AngularJS : JQuery Spinner</h2>
+    <input type="text" ng-model="angJQuerySpin" />
+    <h3>Hello {{angJQuerySpin}} : Welcome to AngularJS JQuery World...</h3>
+    <br />
+    First Name : <input type="text" data-ng-model="fname" />
+    <br />
+    Last Name :  <input type="text" data-ng-model="lname" />
+    <br />
+    Result : {{fname+' '+lname}}
+    <br />
+    <input id="Button" type="button" value="Spin!" class="btn btn-primary btn-lg" />
+    <br />
+    <br />
+    <div id="idAngJSClick" ng-controller="myCtrl">
+        <br />
+        <h3 ng-click="mouseClickCount = mouseClickCount + 1">AngularJS 'ng-click' : Mouse Click</h3>
+        Click mouse over the above HTML Element to increase the click count!!!
+        <h4>{{mouseClickCount}}</h4>
+        <br />
+    </div>
+    <br />
+    <br />
+</body>
+</html>
+<script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('myCtrl', function ($scope) {
+        $scope.mouseMoveCount = 0;
+        $scope.mouseClickCount = 0;
+        $scope.buttonClickCount = 0;
+        $scope.myBtnClick_Function = function () { $scope.buttonClickCount++; }
+        $scope.showMeMenu = false;
+        $scope.myToggleBtnClick_Func = function () { $scope.showMeMenu = !$scope.showMeMenu; }
+        $scope.myMouseMove_EventHandler = function (myMouseEvent) {
+            $scope.x = myMouseEvent.clientX;
+            $scope.y = myMouseEvent.clientY;
+        }
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#Button").click(function () {
+            alert("Spin Button Clicked")
+            $("#loading").fadeIn();
+        });
+
+        $("#loading").click(function () {            
+            $("#loading").fadeOut();
+        });
+
+    });
+</script>
+<div id="loading">
+    <div id="loadingcontent">
+        <p id="loadingspinner">            
+            <img class="gif-image" src="~/Areas/AngularJS/Images/ajax-loader-big.gif" 
+                 gif-data="~/Areas/AngularJS/Images/ajax-loader-big.gif" />
+            <br/>
+            Searching UPC...
+        </p>
+    </div>
+</div>
+<style type="text/css">
+    #loading {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.8);
+        z-index: 1000;
+    }
+
+    #loadingcontent {
+        display: table;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #loadingspinner {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        text-align: center;
+        font-size: larger;
+        padding-top: 80px;
+    }
+</style>

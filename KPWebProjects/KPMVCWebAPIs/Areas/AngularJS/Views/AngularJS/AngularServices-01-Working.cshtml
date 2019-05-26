@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title ng-bind="helloAngular"></title>
+</head>
+<body>
+    @{
+        ViewBag.Title = "AngularServices";
+    }
+
+    <h2>AngularServices</h2>
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+
+    <div ng-app="myApp" id="idAngJSHttpService" ng-controller="myCtrl">
+        <br />
+        <h3>AngularJS HTTP Service '$http'</h3>
+        <p>HTTP Service Response : </p>
+        <h4>{{myWelcome}}</h4>
+        <br />
+        <h3>AngularJS Location Service '$location'</h3>
+        <p>The URL of this Page is : </p>
+        <h4>{{myUrl}}</h4>
+        <br />
+        <h3>AngularJS Timeout Service '$timeout'</h3>
+        <p>Timeout Service '$timeout' displays a message after 3 Seconds : </p>
+        <h4>{{myHeader}}</h4>
+        <br />
+    </div>
+    <script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller('myCtrl', function ($scope, $http, $location, $timeout) {
+            $http.get("http://localhost:52807/api/Persons/20778").then(function (response) {
+                $scope.myWelcome = response.data;
+            });
+            $scope.myUrl = $location.absUrl();
+            $scope.myHeader = "Hello AngularJS World!";
+            $timeout(function () { $scope.myHeader = "How are you today?" }, 3000);
+        });
+    </script>
+
+
+    @*<div ng-app="myHttpServApp" id="idAngJSHttpService" ng-controller="myHttpServCtrl">
+            <br />
+            <h3>AngularJS HTTP Service '$http'</h3>
+            <p>HTTP Service Response : </p>
+            <h4>{{myWelcome}}</h4>
+            <br />
+        </div>
+        <script>
+            var myHttpServApp = angular.module('myHttpServApp', []);
+            myHttpServApp.controller('myHttpServCtrl', function ($scope, $http) {
+                $http.get("http://localhost:52807/api/Persons/20778").then(function (response) {
+                    $scope.myWelcome = response.data;
+                });
+            });
+        </script>*@
+
+
+    @*<div ng-app="myLocServApp" id="idLocationService" ng-controller="myLocServCtrl">
+            <br />
+            <h3>AngularJS Location Service '$location'</h3>
+            <p>The URL of this Page is : </p>
+            <h4>{{myUrl}}</h4>
+            <br />
+        </div>
+        <script>
+            var myLocServApp = angular.module('myLocServApp', []);
+            myLocServApp.controller('myLocServCtrl', function ($scope, $location) {
+                $scope.myUrl = $location.absUrl();
+            });
+        </script>*@
+
+
+</body >
+</html >
+
+@*  AngularJS Services
+    What is an Angular Service?
+        In AngularJS, a service is a function, or object, that is available for, and limited to, your AngularJS application.
+        AngularJS has about 30 built-in services. One of them is the $location service.
+        The '$location' service has methods which return information about the location of the current web page.
+        The '$http' service is one of the most common used services in AngularJS applications.
+        The '$http' service makes a request to the server, and lets your application handle the response.
+*@

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title ng-bind="helloAngular"></title>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-aria.js"></script>
+    <script src="~/Scripts/angular-material.js"></script>
+    <script src="~/Scripts/angular-ui/"></script>
+</head>
+<body>
+    @{
+        ViewBag.Title = "AngularJSModules";
+    }
+
+    <h2>AngularJS : Angular Modules & Angular Directives</h2>
+
+    <div id="ngModelBinding">
+        <br />
+        <h3>Angular JS ng-Model Binding</h3>
+        <input type="text" ng-model="helloAngular" />
+        <h4>Hello {{helloAngular}} : Welcome to Angular JS World...</h4>
+        <br />
+    </div>
+
+    @*<div ng-app="ngAnimateApp" id="ngAnimate">
+        <br />
+        <h3>AngularJS Animations : ng-hide</h3>
+        <div ng-hide="myCheck">KP : Hide this div tag...</div>
+        <h4>Hide the DIV: <input  class="green" type="checkbox" ng-model="myCheck"></h4>
+        <h4>Hide the DIV: <md-checkbox class="green" ng-model="myCheck"></h4>
+        <br />
+            <md-checkbox ng-model="truthy" ng-checked="true" label="md-checkbox">{{truthy}}</md-checkbox>
+        <br />
+    </div>*@
+
+    <div ng-app="my2ndApp" >
+        <br />
+        <h3>AngularJS ng-Model</h3>
+        First Name: <input type="text" ng-model="firstName"><br>
+        Last Name: <input type="text" ng-model="lastName"><br>
+        <br />
+        Full Name: {{firstName + " " + lastName}}
+        <br />
+    </div>
+    
+    @*<script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller('GreetingController', ['$scope', function ($scope) {
+            $scope.greeting = 'Hola';
+        }]);
+    </script>
+    <div ng-controller="GreetingController">
+        <br />
+        <h3>AngularJS ng-Controller & Scope Operator</h3>
+        <input type="text" ng-model="holaAngular" />
+        <h4>{{ greeting + " " + holaAngular + "!!!" }}</h4>
+        <br />
+    </div>*@
+    
+    <script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller('GreetingNamesController', ['$scope', function ($scope) {
+            $scope.greeting = 'Hola';
+            $scope.names = [
+                                { name: 'Jani', country: 'Norway' },
+                                { name: 'Hege', country: 'Sweden' },
+                                { name: 'Kai', country: 'Denmark' }
+                ];
+            $scope.truthy = true;
+        }]);
+        myApp.run(function () {
+        });
+         
+        //app.controller('appController', ['$scope', function ($scope) {
+        //    $scope.truthy = true;
+        //}]);
+
+        //app.run(function () {
+        //});
+
+    </script>
+    <div ng-controller="GreetingNamesController">
+        <br />
+        <h3>AngularJS ng-Controller & Scope Operator</h3>
+        <input type="text" ng-model="holaAngular" />
+        <h4>{{ greeting + " " + holaAngular + "!!!" }}</h4>
+        <br />
+        <h3>AngularJS ng-repeat Directive & ng-controller</h3>
+        <ul>
+            <li ng-repeat="x in names">
+                {{ x.name + ', ' + x.country}}
+            </li>
+        </ul>
+        <br />
+    </div>
+
+</body>
+</html>

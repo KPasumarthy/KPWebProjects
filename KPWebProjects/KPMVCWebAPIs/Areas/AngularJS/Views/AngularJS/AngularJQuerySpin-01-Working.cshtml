@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title ng-bind="angJQuerySpin"></title>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+</head>
+<body>
+    @{
+        ViewBag.Title = "AngularJS-HelloWorld";
+    }
+    <h2>AngularJS : JQuery Spinner</h2>
+    <input type="text" ng-model="angJQuerySpin" />
+    <h3>Hello {{angJQuerySpin}} : Welcome to Angular JS JQuery World...</h3>
+    <br />
+    First Name : <input type="text" data-ng-model="fname" />
+    <br />
+    Last Name :  <input type="text" data-ng-model="lname" />
+    <br />
+    Result : {{fname+' '+lname}}
+    <br />
+    <input id="Button" type="button" value="Spin!" class="btn btn-primary btn-lg" />
+    <br />
+    <input id="KPButton" type="button" value="KPSpin!" class="btn btn-primary btn-lg" />
+    <br />
+    <div id="idAngJSClick" ng-controller="myCtrl">
+        <br />
+        <h3 ng-click="mouseClickCount = mouseClickCount + 1">AngularJS 'ng-click' : Mouse Click</h3>
+        Click mouse over the above HTML Element to increase the click count!!!
+        <h4>{{mouseClickCount}}</h4>
+        <br />
+    </div>
+    <br />
+    <br />
+    <div class="image-container">
+        <a href="javascript:void(0);" class="image-button">
+            <div class="loading-animation show"></div>
+            <img class="gif-image" src="~/Areas/AngularJS/Images/ajax-loader-big.gif" gif-data="~/Areas/AngularJS/Images/ajax-loader-big.gif" />
+            <img class="jpg-image hidden" src="~/Areas/AngularJS/Images/KPIcon32x32.jpg" />
+            @*<img class="gif-image hidden" src="http://www.example.com/images/empty.gif" gif-data="http://www.example.com/images/my-image.gif" />*@
+            @*<img class="jpg-image" src="http://www.example.com/images/my-image.jpg" />*@
+        </a>
+    </div>
+
+</body>
+</html>
+<script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('myCtrl', function ($scope) {
+        $scope.mouseMoveCount = 0;
+        $scope.mouseClickCount = 0;
+        $scope.buttonClickCount = 0;
+        $scope.myBtnClick_Function = function () { $scope.buttonClickCount++; }
+        $scope.showMeMenu = false;
+        $scope.myToggleBtnClick_Func = function () { $scope.showMeMenu = !$scope.showMeMenu; }
+        $scope.myMouseMove_EventHandler = function (myMouseEvent) {
+            $scope.x = myMouseEvent.clientX;
+            $scope.y = myMouseEvent.clientY;
+        }
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#KPButton").click(function () {
+            if ($(".jpg-image").is(":visible")) {
+                $(".loading-animation").show();
+                var gifImage = $(".gif-image").attr("gif-data");
+                $.loadImage(gifImage).done(function (image) {
+                    $(".gif-image").attr("src", image.src).show();
+                    $(".jpg-image").hide();
+                    $(".loading-animation").hide();
+                });
+            } else {
+                $(".jpg-image").show();
+                $(".gif-image").hide();
+            }
+        });
+    });
+
+    $.loadImage = function (url) {
+        // Define a "worker" function that should eventually resolve or reject the deferred object.
+        var loadImage = function (deferred) {
+            var image = new Image();
+            // Set up event handlers to know when the image has loaded
+            // or fails to load due to an error or abort.
+            image.onload = loaded;
+            image.onerror = errored; // URL returns 404, etc
+            image.onabort = errored; // IE may call this if user clicks "Stop"
+            // Setting the src property begins loading the image.
+            image.src = url;
+            function loaded() {
+                unbindEvents();
+                // Calling resolve means the image loaded sucessfully and is ready to use.
+                deferred.resolve(image);
+            }
+            function errored() {
+                unbindEvents();
+                // Calling reject means we failed to load the image (e.g. 404, server offline, etc).
+                deferred.reject(image);
+            }
+            function unbindEvents() {
+                // Ensures the event callbacks only get called once.
+                image.onload = null;
+                image.onerror = null;
+                image.onabort = null;
+            }
+        };
+
+        return $.Deferred(loadImage).promise();
+    };
+
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#Button").click(function () {
+            alert("Button Clicked")
+            $("#loading").fadeIn();
+        });
+    });
+</script>
+<div id="loading">
+    <div id="loadingcontent">
+        <p id="loadingspinner">
+            Searching things...
+        </p>
+    </div>
+</div>
+@*<script type="text/javascript" src="@Url.Content("~/Scripts/spin.js")"></script>*@
+<script type="text/javascript">
+    @*<script type="module" src="~/Scripts/spin.js">*@
+    $(function () {
+            $("#Button").click(function () {
+                alert("KP: Spin Button Click!");
+                $("#Button").fadeIn();
+                var opts = {
+                    lines: 12, // The number of lines to draw
+                    length: 7, // The length of each line
+                    width: 4, // The line thickness
+                    radius: 10, // The radius of the inner circle
+                    color: '#ff0000', // #rgb or #rrggbb
+                    speed: 1, // Rounds per second
+                    trail: 60, // Afterglow percentage
+                    shadow: false, // Whether to render a shadow
+                    hwaccel: false // Whether to use hardware acceleration
+                };
+                var target = document.getElementById('loading');
+                //var spinner = new Spinner(opts).spin(target);
+            });
+    });
+</script>
+<style type="text/css">
+    #loading {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.8);
+        z-index: 1000;
+    }
+
+    #loadingcontent {
+        display: table;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #loadingspinner {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        text-align: center;
+        font-size: larger;
+        padding-top: 80px;
+    }
+</style>

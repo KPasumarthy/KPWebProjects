@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="KPMVCWebAPIs" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Projects\\KPWebProjects\\KPWebProjects\\KPMVCWebAPIs\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Projects\\KPWebProjects\\KPWebProjects\\KPMVCWebAPIs\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="KPMVCWebAPIs.Database.AdventureWorksDBContext-Web.config Connection String" description="" value="Data Source=SITA;Initial Catalog=AdventureWorks2017;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\KPWebProjects\\KPWebProjects\\KPMVCWebAPIs\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='KPMVCWebAPIs.Database.AdventureWorksDBContext']/@connectionString" />
+  </parameter>
+  <parameter name="AdventureWorksConnectionString-Web.config Connection String" description="" value="Data Source=SITA;Initial Catalog=AdventureWorks2017;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\KPWebProjects\\KPWebProjects\\KPMVCWebAPIs\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AdventureWorksConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

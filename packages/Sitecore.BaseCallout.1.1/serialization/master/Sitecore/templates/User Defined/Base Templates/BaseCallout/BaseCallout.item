@@ -1,0 +1,10 @@
+﻿----item----
+version: 1
+id: {7C965F23-2C4B-40D2-8462-2DC3C4C89048}
+database: master
+path: /sitecore/templates/User Defined/Base Templates/BaseCallout
+parent: {CBC3312F-A20A-43CA-813D-C63FA8C61597}
+name: FiveGuys BaseCallout
+master: {00000000-0000-0000-0000-000000000000}
+template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
+templatekey: Template
