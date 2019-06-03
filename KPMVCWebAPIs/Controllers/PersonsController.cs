@@ -9,31 +9,38 @@ using System.Data.Entity;
 using KPMVCWebAPIs.Database;
 using System.Data.SqlClient;
 using KPMVCWebAPIs.Models;
+using System.Threading.Tasks;
 
 namespace KPMVCWebAPIs.Controllers
 {
-    public class PersonsController :  ApiController
+    public class PersonController :  ApiController
     {
 
         // GET api/Person/5
-        public Person Get(int id)
+        //public Person Get(int id)
+        //private static async Task<Person> Get(int id)
+        private async Task<Person> Get(int id)
         {
             AdventureWorksDAL dbDAL = new AdventureWorksDAL();
             Person person = new Person();
-            person = dbDAL.SelectPerson(id);
+            //person = dbDAL.SelectPerson(id);
+            //KP : Use SelectPersonAsync Method to get Person
+            person = await dbDAL.SelectPersonAsync(id);
             return person;
         }
 
         // GET api/Person/
-        public List<Person> Get()
+        //public List<Person> Get()
+        public async Task<List<Person>> Get()
         {
             AdventureWorksDAL dbDAL = new AdventureWorksDAL();
             List<Person> lstPerson = new List<Person>();
-            lstPerson = dbDAL.SelectAllPersons();
+            //lstPerson = dbDAL.SelectAllPersons();
+            lstPerson = await dbDAL.SelectAllPersonsAsync();
             return lstPerson;
         }
 
-        // GET api/Person/5
+        // POST api/Person/5
         public bool Post(Person person)
         {
             AdventureWorksDAL dbDAL = new AdventureWorksDAL();

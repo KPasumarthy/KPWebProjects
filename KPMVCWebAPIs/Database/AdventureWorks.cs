@@ -13,7 +13,7 @@ using System.Data;
 using System.Reflection;
 using System.Xml;
 using KPMVCWebAPIs.Models;
-
+using System.Threading.Tasks;
 
 namespace KPMVCWebAPIs.Database
 {
@@ -107,6 +107,113 @@ namespace KPMVCWebAPIs.Database
 
                 conn.Close();
             }
+            return lstPerson;
+        }
+
+        //////TODO : GET Person Async Method
+        ////private static async Task<DateTime> CountToAsync(int num = 10)
+        ////{
+        ////    await Task.Run(() => { 
+        ////          KP : Code goes here
+        ////          num++;
+        ////      });
+        ////    return DateTime.Now;
+        ////}
+        //TODO : GET Person Async Method
+        //public static async Task<Person> SelectPersonAsync(int id = 10)
+        public async Task<Person> SelectPersonAsync(int id = 10)
+        {
+            SqlDataAdapter sda = null;
+            DataTable dt = new DataTable();
+            Person person = new Person();
+            SqlConnection conn = new SqlConnection();
+            //conn.ConnectionString = @"Data Source=P5-SFKNP-LT\MSSQLSERVER01; Initial Catalog=AdventureWorks2014; Integrated Security=True; MultipleActiveResultSets=True";
+            //conn.ConnectionString = @"Server=P5-SFKNP-LT\MSSQLSERVER01; Database=AdventureWorks2014; Trusted_Connection=True";
+            //conn.ConnectionString = "AdventureWorksConnectionString";
+            //using (var conn = new SqlConnection("AdventureWorksConnectionString"))
+            conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
+
+            await Task.Run(() =>
+            {
+                using (conn)
+                {
+                    conn.Open();
+
+                    string queryString = "Select * From Person.Person Where BusinessEntityID = " + id;
+                    sda = new SqlDataAdapter(queryString, conn);
+                    sda.Fill(dt);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        XmlDocument xmlDoc = new System.Xml.XmlDocument();
+                        xmlDoc.LoadXml(row[10].ToString());
+
+                        person.BusinessEntityID = (int)row[0];
+                        person.PersonType = (row[1] == DBNull.Value) ? string.Empty : (string)row[1];
+                        person.NameStyle = (row[2] == DBNull.Value) ? false : (bool)row[2];
+                        person.Title = (row[3] == DBNull.Value) ? string.Empty : row[3].ToString();
+                        person.FirstName = (row[4] == DBNull.Value) ? string.Empty : (string)row[4];
+                        person.MiddleName = (row[5] == DBNull.Value) ? string.Empty : (string)row[5];
+                        person.LastName = (row[6] == DBNull.Value) ? string.Empty : (string)row[6];
+                        person.Suffix = (row[7] == DBNull.Value) ? string.Empty : row[7].ToString(); ;
+                        person.EmailPromotion = (int)row[8];
+                        person.AdditionalContactInfo = (row[9] == DBNull.Value) ? string.Empty : row[9].ToString();
+                        person.Demographics = xmlDoc.DocumentElement;
+                        person.Rowguid = (row[11] == DBNull.Value) ? string.Empty : row[11].ToString();
+                    }
+
+                    conn.Close();
+                }
+            });
+            return person;
+        }
+
+        public async Task<List<Person>> SelectAllPersonsAsync()
+        {
+            SqlDataAdapter sda = null;
+            DataTable dt = new DataTable();
+            List<Person> lstPerson = new List<Person>();
+            SqlConnection conn = new SqlConnection();
+            //conn.ConnectionString = @"Data Source=P5-SFKNP-LT\MSSQLSERVER01; Initial Catalog=AdventureWorks2014; Integrated Security=True; MultipleActiveResultSets=True";
+            //conn.ConnectionString = @"Server=P5-SFKNP-LT\MSSQLSERVER01; Database=AdventureWorks2014; Trusted_Connection=True";
+            conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
+
+            await Task.Run(() =>
+            {
+                using (conn)
+                {
+                    conn.Open();
+
+                    string queryString = "Select * From Person.Person";
+                    sda = new SqlDataAdapter(queryString, conn);
+                    sda.Fill(dt);
+
+                    lstPerson = new List<Person>(dt.Rows.Count);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Person person = new Person();
+                        XmlDocument xmlDoc = new System.Xml.XmlDocument();
+                        xmlDoc.LoadXml(row[10].ToString());
+
+                        person.BusinessEntityID = (int)row[0];
+                        person.PersonType = (row[1] == DBNull.Value) ? string.Empty : (string)row[1];
+                        person.NameStyle = (row[2] == DBNull.Value) ? false : (bool)row[2];
+                        person.Title = (row[3] == DBNull.Value) ? string.Empty : row[3].ToString();
+                        person.FirstName = (row[4] == DBNull.Value) ? string.Empty : (string)row[4];
+                        person.MiddleName = (row[5] == DBNull.Value) ? string.Empty : (string)row[5];
+                        person.LastName = (row[6] == DBNull.Value) ? string.Empty : (string)row[6];
+                        person.Suffix = (row[7] == DBNull.Value) ? string.Empty : row[7].ToString(); ;
+                        person.EmailPromotion = (int)row[8];
+                        person.AdditionalContactInfo = (row[9] == DBNull.Value) ? string.Empty : row[9].ToString();
+                        person.Demographics = xmlDoc.DocumentElement;
+                        person.Rowguid = (row[11] == DBNull.Value) ? string.Empty : row[11].ToString();
+
+                        lstPerson.Add(person);
+                    }
+
+                    conn.Close();
+                }
+            });
             return lstPerson;
         }
 
