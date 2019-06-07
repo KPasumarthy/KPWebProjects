@@ -231,11 +231,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\ASyncPersonsController.cs" />
-    <Compile Include="Controllers\PersonsController.cs" />
+    <Compile Include="Controllers\ASyncPersonController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\AdventureWorksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ASyncValuesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Database\AdventureWorks.Context.cs">
       <AutoGen>True</AutoGen>
@@ -1259,12 +1258,4 @@
   </Target>
   <Target Name="AfterBuild">
   </Target> -->
-  <!--KP: The problem with the default VS2015 templates is that the compiler isn't actually copied to the tfr\bin\roslyn\ directory, but rather the {outdir}\roslyn\ directory-->
-  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
-    <ItemGroup>
-      <RoslynFiles Include="$(CscToolPath)\*" />
-    </ItemGroup>
-    <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
-    <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
-  </Target>
 </Project>

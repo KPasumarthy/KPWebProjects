@@ -18,7 +18,8 @@ using System.Threading.Tasks;
 namespace KPMVCWebAPIs.Database
 {
     //public class AdventureWorksDBInitialize     {
-    public class AdventureWorksDAL  //Adventure Works Data Access Layer 
+    //public class AdventureWorksDAL  //Adventure Works Data Access Layer 
+    internal class AdventureWorksDAL  //Adventure Works Data Access Layer 
     {
         //
         public Person SelectPerson(int id)
