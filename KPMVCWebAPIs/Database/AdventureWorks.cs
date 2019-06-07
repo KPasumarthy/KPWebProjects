@@ -14,6 +14,8 @@ using System.Reflection;
 using System.Xml;
 using KPMVCWebAPIs.Models;
 using System.Threading.Tasks;
+using System.Configuration;
+
 
 namespace KPMVCWebAPIs.Database
 {
@@ -28,8 +30,7 @@ namespace KPMVCWebAPIs.Database
             DataTable dt = new DataTable();
             Person person = new Person();
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "AdventureWorksConnectionString";
-            //using (var conn = new SqlConnection("AdventureWorksConnectionString"))
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
             //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
             using (conn)
             {
@@ -69,10 +70,8 @@ namespace KPMVCWebAPIs.Database
             DataTable dt = new DataTable();
             List<Person> lstPerson = new List<Person>();
             SqlConnection conn = new SqlConnection();
-            //conn.ConnectionString = @"Data Source=P5-SFKNP-LT\MSSQLSERVER01; Initial Catalog=AdventureWorks2014; Integrated Security=True; MultipleActiveResultSets=True";
-            //conn.ConnectionString = @"Server=P5-SFKNP-LT\MSSQLSERVER01; Database=AdventureWorks2014; Trusted_Connection=True";
-            conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
-            //using (var conn = new SqlConnection("AdventureWorksConnectionString"))
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
+            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
             using (conn)
             {
                 conn.Open();
@@ -128,11 +127,8 @@ namespace KPMVCWebAPIs.Database
             DataTable dt = new DataTable();
             Person person = new Person();
             SqlConnection conn = new SqlConnection();
-            //conn.ConnectionString = @"Data Source=P5-SFKNP-LT\MSSQLSERVER01; Initial Catalog=AdventureWorks2014; Integrated Security=True; MultipleActiveResultSets=True";
-            //conn.ConnectionString = @"Server=P5-SFKNP-LT\MSSQLSERVER01; Database=AdventureWorks2014; Trusted_Connection=True";
-            //conn.ConnectionString = "AdventureWorksConnectionString";
-            //using (var conn = new SqlConnection("AdventureWorksConnectionString"))
-            conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
+            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
 
             await Task.Run(() =>
             {
@@ -175,9 +171,8 @@ namespace KPMVCWebAPIs.Database
             DataTable dt = new DataTable();
             List<Person> lstPerson = new List<Person>();
             SqlConnection conn = new SqlConnection();
-            //conn.ConnectionString = @"Data Source=P5-SFKNP-LT\MSSQLSERVER01; Initial Catalog=AdventureWorks2014; Integrated Security=True; MultipleActiveResultSets=True";
-            //conn.ConnectionString = @"Server=P5-SFKNP-LT\MSSQLSERVER01; Database=AdventureWorks2014; Trusted_Connection=True";
-            conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
+            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
 
             await Task.Run(() =>
             {
@@ -225,10 +220,8 @@ namespace KPMVCWebAPIs.Database
             SqlDataAdapter sda = null;
             DataTable dt = new DataTable();
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source=P5-SFKNP-LT\MSSQLSERVER01; Initial Catalog=AdventureWorks2014; Integrated Security=True; MultipleActiveResultSets=True";
-
-            //conn.ConnectionString = @"Server=P5-SFKNP-LT\MSSQLSERVER01; Database=AdventureWorks2014; Trusted_Connection=True";
-            //using (var conn = new SqlConnection("AdventureWorksConnectionString"))
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
+            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
             using (conn)
             {
                 conn.Open();
@@ -286,11 +279,8 @@ namespace KPMVCWebAPIs.Database
             SqlDataAdapter sda = null;
             DataTable dt = new DataTable();
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source=P5-SFKNP-LT\MSSQLSERVER01; Initial Catalog=AdventureWorks2014; 
-                                      Integrated Security=True; MultipleActiveResultSets=True";
-
-            //conn.ConnectionString = @"Server=P5-SFKNP-LT\MSSQLSERVER01; Database=AdventureWorks2014; Trusted_Connection=True";
-            //using (var conn = new SqlConnection("AdventureWorksConnectionString"))
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
+            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
             using (conn)
             {
                 conn.Open();
@@ -344,9 +334,8 @@ namespace KPMVCWebAPIs.Database
             List<Person> lstPerson = new List<Person>();
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source=P5-SFKNP-LT\MSSQLSERVER01; Initial Catalog=AdventureWorks2014; Integrated Security=True; MultipleActiveResultSets=True";
-            //conn.ConnectionString = @"Server = P5 - SFKNP - LT\MSSQLSERVER01; Database = AdventureWorks2014; Trusted_Connection = True";
-            //using (var conn = new SqlConnection("AdventureWorksConnectionString"))
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
+            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
             using (conn)
             {
                 conn.Open();
