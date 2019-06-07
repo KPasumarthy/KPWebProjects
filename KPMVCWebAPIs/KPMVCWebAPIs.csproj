@@ -282,6 +282,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="KPIcon16x16.ico" />
+    <Content Include="Literature\KPMVCWebAPIs.com-ASyncHttpGetPersonValues.jpg" />
+    <Content Include="Literature\KPMVCWebAPIs.com-ASyncHttpGetValues.jpg" />
+    <Content Include="Literature\KPMVCWebAPIs.com-IE-HTTPGetPersons.jpg" />
+    <Content Include="Literature\KPMVCWebAPIs.com-Postman-HTTPGetPersons.jpg" />
     <Content Include="ReadMe.txt" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -385,6 +389,8 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Literature\Async_Await - C# Reference _ Microsoft Docs.pdf" />
+    <Content Include="Literature\Async_Await Task Methods With SQL Queries .NET 4.5 - CodeProject.pdf" />
     <None Include="Properties\PublishProfiles\KPMVCWebAPIsProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />

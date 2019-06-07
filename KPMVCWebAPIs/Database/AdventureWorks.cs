@@ -28,11 +28,9 @@ namespace KPMVCWebAPIs.Database
             DataTable dt = new DataTable();
             Person person = new Person();
             SqlConnection conn = new SqlConnection();
-            //conn.ConnectionString = @"Data Source=P5-SFKNP-LT\MSSQLSERVER01; Initial Catalog=AdventureWorks2014; Integrated Security=True; MultipleActiveResultSets=True";
-            //conn.ConnectionString = @"Server=P5-SFKNP-LT\MSSQLSERVER01; Database=AdventureWorks2014; Trusted_Connection=True";
-            //conn.ConnectionString = "AdventureWorksConnectionString";
+            conn.ConnectionString = "AdventureWorksConnectionString";
             //using (var conn = new SqlConnection("AdventureWorksConnectionString"))
-            conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
+            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
             using (conn)
             {
                 conn.Open();
