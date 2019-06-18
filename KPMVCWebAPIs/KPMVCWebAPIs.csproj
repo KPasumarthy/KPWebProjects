@@ -282,6 +282,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="KPIcon16x16.ico" />
+    <Content Include="Literature\KPMVCWebAPIs-IE-HttpGETASyncPersons.jpg" />
     <Content Include="Literature\KPMVCWebAPIs.com-ASyncHttpGetPersonValues.jpg" />
     <Content Include="Literature\KPMVCWebAPIs.com-ASyncHttpGetValues.jpg" />
     <Content Include="Literature\KPMVCWebAPIs.com-IE-HTTPGetPersons.jpg" />
