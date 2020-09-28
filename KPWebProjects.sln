@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KPMutex", "KPMutex\KPMutex.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KPConsole", "KPConsole\KPConsole.csproj", "{C1BBAE5E-5E52-4B5F-BDD3-39E25FB98CEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPMVCWebAPIs", "KPMVCWebAPIs\KPMVCWebAPIs.csproj", "{7F4B483A-74C8-485E-9CA6-61E692B994CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPSocket", "KPSocket\KPSocket.csproj", "{B2B131F3-A1CE-460D-8B55-21547FE8D982}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{C1BBAE5E-5E52-4B5F-BDD3-39E25FB98CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1BBAE5E-5E52-4B5F-BDD3-39E25FB98CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1BBAE5E-5E52-4B5F-BDD3-39E25FB98CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F4B483A-74C8-485E-9CA6-61E692B994CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F4B483A-74C8-485E-9CA6-61E692B994CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F4B483A-74C8-485E-9CA6-61E692B994CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F4B483A-74C8-485E-9CA6-61E692B994CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B131F3-A1CE-460D-8B55-21547FE8D982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B131F3-A1CE-460D-8B55-21547FE8D982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B131F3-A1CE-460D-8B55-21547FE8D982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B131F3-A1CE-460D-8B55-21547FE8D982}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

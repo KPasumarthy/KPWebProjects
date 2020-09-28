@@ -15,7 +15,7 @@ namespace KPMVCWebAPIs.Controllers
 {
     public class ASyncPersonsController : ApiController
     {
-        // GET api/ASyncPerson/27 : ASynchronous GET Person
+        // GET api/ASyncPersons/27 : ASynchronous GET Person
         public async Task<Person> Get(int id)
         {
             AdventureWorksDAL dbDAL = new AdventureWorksDAL();
@@ -24,7 +24,7 @@ namespace KPMVCWebAPIs.Controllers
             return person;
         }
 
-        // GET api/ASyncPerson : ASynchronous Get Persons
+        // GET api/ASyncPersons : ASynchronous Get Persons
         public async Task<List<Person>> Get()
         {
             AdventureWorksDAL dbDAL = new AdventureWorksDAL();
