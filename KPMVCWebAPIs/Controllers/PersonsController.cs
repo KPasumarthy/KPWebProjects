@@ -48,7 +48,7 @@ namespace KPMVCWebAPIs.Controllers
         //    return person;
         //}
 
-        //// GET api/Person/ : ASynchronous GET
+        //// GET api/Persons/ : ASynchronous GET
         //public async Task<List<Person>> Get()
         //{
         //    AdventureWorksDAL dbDAL = new AdventureWorksDAL();
@@ -58,7 +58,7 @@ namespace KPMVCWebAPIs.Controllers
         //}
 
 
-        // POST api/Person/5
+        // POST api/Persons/5
         public bool Post(Person person)
         {
             AdventureWorksDAL dbDAL = new AdventureWorksDAL();

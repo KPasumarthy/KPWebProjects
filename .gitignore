@@ -259,3 +259,11 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# KP Projects
+#KPPowerBI/
+#KPSocket/
+
+# KP : Git Ignore
+packages/Sitecore.BaseCallout.1.1/tools/install.log
+packages/Sitecore.NuGet.Sample.1.0/tools/install.log

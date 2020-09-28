@@ -1,7 +1,18 @@
+Use [EmployeeDB]
+Select * From dbo.__EFMigrationsHistory
+Select * From dbo.Employees
+
+
+Use [FundAppsCourierKataContext-20190618174956]
+Select * From dbo.[Parcels]
+
 Use [AdventureWorks2017]
 Select * From Person.Person 
+Select * From INFORMATION_SCHEMA.COLUMNS Where TABLE_NAME = N'Person.Person'
 Select * From Person.Person Where BusinessEntityID = 5
 Select * From Person.Person
+Select * From Person.Person Order By BusinessEntityID DESC
+Select  Count(*) From Person.Person 
 
 
 ----KP : Kill All Existing & Orphaned Connections

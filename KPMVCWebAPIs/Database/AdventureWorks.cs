@@ -16,7 +16,6 @@ using KPMVCWebAPIs.Models;
 using System.Threading.Tasks;
 using System.Configuration;
 
-
 namespace KPMVCWebAPIs.Database
 {
     //public class AdventureWorksDBInitialize     {
@@ -71,7 +70,7 @@ namespace KPMVCWebAPIs.Database
             List<Person> lstPerson = new List<Person>();
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
-            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
+            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";            using (conn)
             using (conn)
             {
                 conn.Open();
@@ -128,7 +127,7 @@ namespace KPMVCWebAPIs.Database
             Person person = new Person();
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
-            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
+            //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";            
 
             await Task.Run(() =>
             {
