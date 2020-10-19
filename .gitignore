@@ -267,3 +267,10 @@ __pycache__/
 # KP : Git Ignore
 packages/Sitecore.BaseCallout.1.1/tools/install.log
 packages/Sitecore.NuGet.Sample.1.0/tools/install.log
+
+KPMSMQWinForms/Literature/Capture1.JPG
+KPMSMQWinForms/Literature/Capture2.JPG
+KPMSMQWinForms/Literature/Capture3.JPG
+KPMSMQWinForms/Literature/Capture4.JPG
+KPMSMQWinForms/Literature/Capture5.JPG
+KPMSMQWinForms/Literature/MinSum-Capture.JPG

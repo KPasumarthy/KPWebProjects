@@ -19,21 +19,76 @@ namespace KPConsole
             //Console.WriteLine("Opeartion : b += a");
             //Console.WriteLine("a = " + a);
             //Console.WriteLine("b = " + b);
+            /////KP : Question : 1
 
-            ///KP : Question : 2
-            var arr = new List<int>() { 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }.ToArray();
-            ////{ 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }
-            ////{-25, -4, - 1, - 1, 1, 9, 10, 10, 12, 15, 22, 33, 33, 33, 34, 55, 81, 90, 98, 100, 125 }
+            ////////KP : Question : 2
+            //var arr = new List<int>() { 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }.ToArray();
+            //////{ 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }
+            //////{-25, -4, - 1, - 1, 1, 9, 10, 10, 12, 15, 22, 33, 33, 33, 34, 55, 81, 90, 98, 100, 125 }
 
-            int target = 100;
-            IList<IList<int>> triplets = ThreeSum(arr, target);
+            //int target = 100;
+            //IList<IList<int>> triplets = ThreeSum(arr, target);
 
-            foreach (var item in triplets)
-            {
-                Console.WriteLine(item[0].ToString() + "," + item[1].ToString() + "," + item[2].ToString());
-            }
-            Console.ReadLine();
+            //foreach (var item in triplets)
+            //{
+            //    Console.WriteLine(item[0].ToString() + "," + item[1].ToString() + "," + item[2].ToString());
+            //}
+            //Console.ReadLine();
+            ///////KP : Question : 2
+
+            /////KP : Question : 3
+            Int64 n = 200;
+            PrintFizzBuzz(n);
+            /////KP : Question : 3
+
+
         }
+
+        public static void PrintFizzBuzz(Int64 n)
+        {
+            Int64 x = 1;
+            while (x <= n)
+            {
+                Int64 r3 = (Int64)x % 3;
+                Int64 r5 = (Int64)x % 5;
+                Console.Write(x + " ");
+                if (r3 == 0)
+                    Console.Write("Fizz");
+
+                if (r5 == 0)
+                    Console.Write("Buzz");
+
+                Console.WriteLine();
+                x++;
+            }
+        }
+
+
+        public static void PrintFizzBuzzIfElse(Int64 n) {
+
+            Int64 x = 1;
+            while (x <= n)
+            { 
+                if (x % 3 == 0 && x % 5 == 0)
+                    Console.WriteLine(x + " FizzBuzz");
+                else
+                {
+                    if (x % 3 == 0 && x % 5 != 0)
+                        Console.WriteLine( x + " Fizz");
+                    else
+                    {
+                        if (x % 3 != 0 && x % 5 == 0)
+                            Console.WriteLine(x + " Buzz");
+                        else 
+                            Console.WriteLine(x);
+                    }
+                }
+
+                x++;
+            }    
+
+        }
+
         public static IList<IList<int>> ThreeSum(int[] nums, int target)
         {
             IList<IList<int>> triplets = new List<IList<int>>();
@@ -76,8 +131,6 @@ namespace KPConsole
             }
             return triplets;
         }
-
-
     }
 }
 
