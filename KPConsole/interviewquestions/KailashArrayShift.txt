@@ -1,0 +1,53 @@
+
+Write a Funtion to Rotate the given array by K times
+
+Input  : arr[] = {1, 2, 3, 4, 5}
+
+K =3
+
+Output:
+
+{4, 5, 1, 2, 3}
+
+
+int[] rotateArray(int[] arr, int k){
+
+    //HashTable ht = new HashTable();
+    //for (int i=0; i < arr.length(); i++){
+    //    ht.key = i;
+    //    ht.value = arr[i];
+    //}
+    
+    int[] arrNew = new int[arr.length()]
+
+    //HashTable ht2 = new HashTable();
+    for (int i=0; i < arr.length(); i++){
+        //ht.key = i + k;
+        //int j = i-k - 1; // If i = 4, j = 0; or i = 5, j =1;
+        int j = 0;
+        
+        if (i >= k){
+        
+            j = i-k - 1; // If i = 4, j = 0; or i = 5, j =1;
+            
+            //ht.key = j;
+             //ht.value = arr[i];
+             
+             arrNew[j] = arr[i];
+             
+         }
+         
+         
+          if (i < k){
+            j = i+k - 1; // If i = 0, j = 2; or i = 1, j = 3;  i = 2, j = 4;
+      
+             arrNew[j] = arr[i];
+            
+            //ht.key = j;
+             //ht.value = arr[i];
+         }
+        
+    }
+
+    return arrNew;
+}

@@ -1,0 +1,44 @@
+Array1 = {-1,0,0,10,15,20,25,30}
+Array2 = {0,1,1,2,8,9,20}
+
+Output {-1,0,1,2,8,9,10,15,20,25,30}
+
+public int[] merge(int[] a, int[] b) {
+    if(a.Length == 0)
+    {
+        return b;
+    }
+    
+    if(b.Length == 0)
+    {
+        return a;
+    }
+    
+    ArrayList<int> result = new ArrayList<int>();
+    int apos = 0, bpos = 0;
+    
+    while(apos < a.Length || bpos < b.Length)
+    {
+        int value;
+        if(a[apos] < b[bpos])
+        {
+            value = a[apos];
+            apos++;
+        }
+        else
+        {
+            value = b[bpos];
+            bpos++;
+         }
+         
+        if(!result.Contains(value))
+        {
+            result.Add(value);
+        } 
+    }
+    
+    //
+    
+    return result.ToArray();
+}
+

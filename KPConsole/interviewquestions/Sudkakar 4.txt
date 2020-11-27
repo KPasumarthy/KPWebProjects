@@ -1,0 +1,143 @@
+Find a word from 2d Grid of Character
+
+Input
+
+{
+    a b c d  -> d-> c, i-1, j-1 -> a,d -> i+1,j+1
+    r a c e  
+    a c a r
+    c b r d
+}
+
+Word : car
+
+Output: {1,2}, {2,1}
+
+searchWord(int[][] A[][] ){
+  for(int i=0; i< rows;i++){
+     for(int j=0;j< col;j++){
+       if(A[i][j] == word[0]){
+        func(A, word, i, j, dir); -> null
+       }
+     }
+  }
+}
+
+int[] func(A, word, row, col, dir, out indexRow, out indexCol){
+if(dir === null)
+  //top: A[i-1][j]
+  // right: A[i][j+1]
+  //left: A[i][j-1]
+  //bottom: A[i+1][j]
+  A[i]
+  int w = 0;
+  while(w < word.length){
+       func()
+  }
+}
+
+Salary
+======
+8000
+4000
+3000
+5000
+
+Result : 5000
+
+SELECT MIN(s1.col) FROM (SELECT TOP 2 AS col FROM SALARY ORDER BY DESC) s1
+
+
+______________________________________________________________________________________________________________
+
+
+// Merging into single arrary without any duplicates order also should maintained
+
+Array1 = {-1,0,0,10,15,20,25,30} //n            {-1, -1, -1 , 2}
+Array2 = {0,1,1,2,8,9,20} //m                   {2,3}
+{}
+//O(n+m)
+
+Output {-1,0,1,2,8,9,10,15,20,25,30}
+
+int[] mergeArrays(int[] arr1, int[] arr2)
+{
+    int ptr1 = 0, ptr2 = 0;
+    List<int> result = new List<int>();
+    int temp = 0;
+    while(ptr1!=arr1.Count && ptr2 != arr2.Count)
+    {
+        if(result.Length! = 0)
+        {
+            temp = result[result.Length-1]; // temp  -1
+            while(ptr1!=arr1.Count && arr1[ptr1]==temp)    ptr1++; // 3
+            while(ptr2!=arr2.Count && arr2[ptr2]==temp)    ptr2++;
+        }
+        
+        if(arr1[ptr1]<arr2[ptr2])
+        {
+            result.Add(arr1[ptr1]);
+            ptr1++;
+        }
+        else
+        {
+            result.Add(arr2[ptr2]);
+            ptr2++;
+        }
+    }
+    while(ptr1!=arr1.Length)
+    {
+        if(result.Length! = 0)
+        {
+            temp = result[result.Length-1];
+            while(ptr1!=arr1.Count && arr1[ptr1]==temp)    ptr1++;
+        }
+        result.Add(arr1[ptr1]);
+            ptr1++;
+    }
+    while(ptr2!=arr2.Length)
+    {
+        if(result.Length! = 0)
+        {
+            temp = result[result.Length-1];
+            while(ptr2!=arr2.Count && arr2[ptr2]==temp)    ptr2++;
+        }
+        result.Add(arr2[ptr2]);
+        ptr2++;
+    }
+    
+    return result.ToArray();
+}
+_________________________________________________________________________________________
+
+// Merging into single arrary without any duplicates order also should maintained
+
+Array1 = {-1,0,0,10,15,20,25,30}
+Array2 = {0,1,1,2,8,9,20}
+
+Output {-1,0,1,2,8,9,10,15,20,25,30}
+
+Public int[] Merge(int[] Array1, int[] Array2)
+{
+       List<int> result = new List<int>();
+       int a1pointer = 0;
+       int a2pointer = 0;
+       int removeDuplicate;
+       while(a1pointer < Array1.Length || b1pointer < Array2.Length )
+       {
+           if (alpointer<Array1.Length && b1pointer<Array2.Length && Array1[a1pointer]<Array2[b1pointer])
+           {
+               if(!result.Contains(Array1[a1pointer])
+               result.Add(Array1[a1pointer])
+               Array1[a1pointer]++
+           }
+           else
+           {
+               if(!result.Contains(Array1[b1pointer])
+               result.Add(Array1[b1pointer])
+               Array1[b1pointer]++
+           }
+                 
+       }
+       return result.ToArray();
+       

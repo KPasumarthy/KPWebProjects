@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+
 namespace KPConsole
 {
     class Program
@@ -37,12 +38,86 @@ namespace KPConsole
             ///////KP : Question : 2
 
             /////KP : Question : 3
-            Int64 n = 200;
-            PrintFizzBuzz(n);
+            Int64 n = 15;
+            //PrintFizzBuzz(n);
+            FizzBuzz.PrintFizzBuzz(n);
+            FizzBuzz.PrintFizzBuzzComplex(n);
             /////KP : Question : 3
+            ///
+
+            /////KP : Question : 4
+            //Write a Funtion to Rotate the given array by K times
+
+            //Input  : arr[] = { 1, 2, 3, 4, 5 }
+            //K = 3
+            //Output: { 4, 5, 1, 2, 3}
+            int[] arr = { 1, 2, 3, 4, 5 };
+            int k = 3;
+            int[] arrNew = rotateArray(arr, k);
+            Console.Write("[");
+            arrNew.ToList().ForEach(i => Console.Write(i.ToString() + ", "));
+            Console.WriteLine("]");
 
 
+            /////KP : Question : 4
         }
+
+
+
+
+        public static int[] rotateArray(int[] arr, int k)
+        {
+
+            //HashTable ht = new HashTable();
+            //for (int i=0; i < arr.length(); i++){
+            //    ht.key = i;
+            //    ht.value = arr[i];
+            //}
+
+            int[] arrNew = new int[arr.Length];
+
+            //HashTable ht2 = new HashTable();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                //ht.key = i + k;
+                //int j = i-k - 1; // If i = 4, j = 0; or i = 5, j =1;
+                int j = 0;
+
+                if (i >= k)
+                {
+
+                    j = i - k; // If i = 4, j = 0; or i = 5, j =1;
+
+                    //ht.key = j;
+                    //ht.value = arr[i];
+
+                    arrNew[j] = arr[i];
+
+                }
+
+                //if (i == k)
+                //{
+                //    j = i-k; // If i = 3, j = 3; 
+
+                //    arrNew[j] = arr[i];
+                //}
+
+
+                if (i < k)
+                {
+                    j = i + k - 1; // If i = 0, j = 2; or i = 1, j = 3;  i = 2, j = 4;
+
+                    arrNew[j] = arr[i];
+
+                    //ht.key = j;
+                    //ht.value = arr[i];
+                }
+
+            }
+
+            return arrNew;
+        }
+
 
         public static void PrintFizzBuzz(Int64 n)
         {
@@ -63,29 +138,29 @@ namespace KPConsole
             }
         }
 
-
-        public static void PrintFizzBuzzIfElse(Int64 n) {
+        public static void PrintFizzBuzzComplex(Int64 n)
+        {
 
             Int64 x = 1;
             while (x <= n)
-            { 
+            {
                 if (x % 3 == 0 && x % 5 == 0)
                     Console.WriteLine(x + " FizzBuzz");
                 else
                 {
                     if (x % 3 == 0 && x % 5 != 0)
-                        Console.WriteLine( x + " Fizz");
+                        Console.WriteLine(x + " Fizz");
                     else
                     {
                         if (x % 3 != 0 && x % 5 == 0)
                             Console.WriteLine(x + " Buzz");
-                        else 
+                        else
                             Console.WriteLine(x);
                     }
                 }
 
                 x++;
-            }    
+            }
 
         }
 
@@ -103,7 +178,7 @@ namespace KPConsole
             }
 
             //implementation goes here
-            int i = 0, j = nums.Length-1;
+            int i = 0, j = nums.Length - 1;
 
             for (i = 0, j = nums.Length - 1; i < j; i++, j--)
             {
