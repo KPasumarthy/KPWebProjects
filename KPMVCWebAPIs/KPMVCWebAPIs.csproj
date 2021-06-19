@@ -262,8 +262,6 @@
     <Content Include="Areas\AngularJS\Images\ajax-loader-big.gif" />
     <Content Include="Areas\AngularJS\Images\KPIcon256x256.jpg" />
     <Content Include="Areas\AngularJS\Images\KPIcon32x32.jpg" />
-    <Content Include="Areas\AngularJS\Images\shoprite_no_border.png" />
-    <Content Include="Areas\AngularJS\Images\shoprite_old.png" />
     <Content Include="Areas\AngularJS\Views\AngularJS\Index.cshtml" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\angular-material.css" />
