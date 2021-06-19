@@ -274,3 +274,27 @@ KPMVCWebAPIs/Connected Services/
 KPMVCWebAPIs/Controllers/KPWCFServiceClientController.cs
 KPMVCWebAPIs/Literature/KPWCFServices-ClientServiceReference.JPG
 KPMVCWebAPIs/msmq/
+
+### Changes to be Ignored
+KPMVCWebAPIs/Areas/AngularJS/angular-routing-in-depth.zip
+#KPMVCWebAPIs/Areas/AngularJS/angular-routing-in-depth/01-introduction-and-overview/introduction-and-overview-slides.pdf
+#KPMVCWebAPIs/Areas/AngularJS/angular-routing-in-depth/02-url-based-routing-with-ngroute/url-based-routing-with-ngroute-exercise-files.zip
+#KPMVCWebAPIs/Areas/AngularJS/angular-routing-in-depth/02-url-based-routing-with-ngroute/url-based-routing-with-ngroute-slides.pdf
+#KPMVCWebAPIs/Areas/AngularJS/angular-routing-in-depth/03-state-based-routing-with-ui-router/state-based-routing-with-ui-router-exercise-files.zip
+#KPMVCWebAPIs/Areas/AngularJS/angular-routing-in-depth/03-state-based-routing-with-ui-router/state-based-routing-with-ui-router-slides.pdf
+#KPMVCWebAPIs/Areas/AngularJS/angular-routing-in-depth/04-advanced-routing-with-ui-router/advanced-routing-with-ui-router-exercise-files.zip
+#KPMVCWebAPIs/Areas/AngularJS/angular-routing-in-depth/04-advanced-routing-with-ui-router/advanced-routing-with-ui-router-slides.pdf
+
+### Changes to be Ignored
+/KPMVCWebAPIs/Scripts/
+KPSocket/Program-Original.cs.txt
+KPWCFService/Web-00.Debug.config
+KPWCFService/Web-00.Release.config
+KPWCFService/Web-00.config
+KPWCFService/Web.Debug.config
+/KPMVCWebAPIs/Areas/AngularJS/Views/AngularJS/AngularServices-01-Working.cshtml
+/KPMVCWebAPIs/Areas/AngularJS/Views/AngularJS/AngularServices-00.txt
+/KPMVCWebAPIs/Areas/AngularJS/Views/AngularJS/AngularModules-01-Working.cshtml
+/KPMVCWebAPIs/Areas/AngularJS/Views/AngularJS/AngularJQuerySpin-02-Working.cshtml
+/KPMVCWebAPIs/Areas/AngularJS/Views/AngularJS/AngularJQuerySpin-01-Working.cshtml
+/KPMVCWebAPIs/Areas/AngularJS/angular-routing-in-depth
