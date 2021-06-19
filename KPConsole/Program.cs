@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/kpDevBranch
 namespace KPConsole
 {
     class Program
@@ -20,6 +23,7 @@ namespace KPConsole
             //Console.WriteLine("Opeartion : b += a");
             //Console.WriteLine("a = " + a);
             //Console.WriteLine("b = " + b);
+<<<<<<< HEAD
             /////KP : Question : 1
 
             ////////KP : Question : 2
@@ -164,6 +168,23 @@ namespace KPConsole
 
         }
 
+=======
+
+            ///KP : Question : 2
+            var arr = new List<int>() { 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }.ToArray();
+            ////{ 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }
+            ////{-25, -4, - 1, - 1, 1, 9, 10, 10, 12, 15, 22, 33, 33, 33, 34, 55, 81, 90, 98, 100, 125 }
+
+            int target = 100;
+            IList<IList<int>> triplets = ThreeSum(arr, target);
+
+            foreach (var item in triplets)
+            {
+                Console.WriteLine(item[0].ToString() + "," + item[1].ToString() + "," + item[2].ToString());
+            }
+            Console.ReadLine();
+        }
+>>>>>>> origin/kpDevBranch
         public static IList<IList<int>> ThreeSum(int[] nums, int target)
         {
             IList<IList<int>> triplets = new List<IList<int>>();
@@ -178,7 +199,11 @@ namespace KPConsole
             }
 
             //implementation goes here
+<<<<<<< HEAD
             int i = 0, j = nums.Length - 1;
+=======
+            int i = 0, j = nums.Length-1;
+>>>>>>> origin/kpDevBranch
 
             for (i = 0, j = nums.Length - 1; i < j; i++, j--)
             {
@@ -206,6 +231,11 @@ namespace KPConsole
             }
             return triplets;
         }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/kpDevBranch
     }
 }
 

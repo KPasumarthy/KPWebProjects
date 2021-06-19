@@ -267,6 +267,7 @@ __pycache__/
 # KP : Git Ignore
 packages/Sitecore.BaseCallout.1.1/tools/install.log
 packages/Sitecore.NuGet.Sample.1.0/tools/install.log
+<<<<<<< HEAD
 
 KPMSMQWinForms/Literature/Capture1.JPG
 KPMSMQWinForms/Literature/Capture2.JPG
@@ -277,3 +278,12 @@ KPMSMQWinForms/Literature/MinSum-Capture.JPG
 /KPWCFService/Web-00.Release.config
 /KPWCFService/Web-00.Debug.config
 /KPWCFService/Web-00.config
+=======
+KPMVCWebAPIs/Controllers/ValuesController.cs
+KPMVCWebAPIs/KPMVCWebAPIs.csproj
+KPMVCWebAPIs/Web.config
+KPMVCWebAPIs/Connected Services/
+KPMVCWebAPIs/Controllers/KPWCFServiceClientController.cs
+KPMVCWebAPIs/Literature/KPWCFServices-ClientServiceReference.JPG
+KPMVCWebAPIs/msmq/
+>>>>>>> origin/kpDevBranch

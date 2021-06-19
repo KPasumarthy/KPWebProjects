@@ -221,6 +221,10 @@ namespace KPMVCWebAPIs.Database
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
             //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/kpDevBranch
             using (conn)
             {
                 conn.Open();
@@ -280,6 +284,10 @@ namespace KPMVCWebAPIs.Database
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
             //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/kpDevBranch
             using (conn)
             {
                 conn.Open();
@@ -335,6 +343,10 @@ namespace KPMVCWebAPIs.Database
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ConnectionString;
             //conn.ConnectionString = @"Data Source=localhost;Initial Catalog=AdventureWorks2017;Integrated Security=True; MultipleActiveResultSets=True";
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/kpDevBranch
             using (conn)
             {
                 conn.Open();

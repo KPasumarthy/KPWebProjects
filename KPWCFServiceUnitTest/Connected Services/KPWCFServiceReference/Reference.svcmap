@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="325c8f4d-1c8a-4932-8d88-0fb578684c72" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:59030/KPWCFService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="KPWCFService.xsd" MetadataType="Schema" ID="59467156-ed8d-431a-871b-1d1d541da824" SourceId="1" SourceUrl="http://localhost:59030/KPWCFService.svc?xsd=xsd0" />
+    <MetadataFile FileName="KPWCFService1.xsd" MetadataType="Schema" ID="7e061a1c-b7ac-4bd0-bdef-e23aa632fe4d" SourceId="1" SourceUrl="http://localhost:59030/KPWCFService.svc?xsd=xsd1" />
+    <MetadataFile FileName="KPWCFService.wsdl" MetadataType="Wsdl" ID="9a709607-6c94-45c8-b0c2-1f84a8d6e28b" SourceId="1" SourceUrl="http://localhost:59030/KPWCFService.svc?wsdl" />
+    <MetadataFile FileName="KPWCFService.disco" MetadataType="Disco" ID="28b44d57-e005-4aa3-8d5b-444974511dbf" SourceId="1" SourceUrl="http://localhost:59030/KPWCFService.svc?disco" />
+    <MetadataFile FileName="KPWCFService2.xsd" MetadataType="Schema" ID="9ddb8b5a-aec8-42d8-a1a4-f8068b42ac8f" SourceId="1" SourceUrl="http://localhost:59030/KPWCFService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
