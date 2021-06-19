@@ -1,0 +1,48 @@
+Virtual method and Abstract method?
+Why C# not supporting multiple inheritance?
+Interface1, 2, child class related.when implementing two interfaces?
+Use of private constructor? where it can be used? Private constructore will allow you to creat?
+How you can retrive from the list?
+How do you retrive all the departments?
+Entity frame work? Which type of approach?
+I have one action method in MVC, we need to provide authorizarion to the action method?
+I have an action method, how do you provide action method? and how do you authonticate?
+I have an action method, its only available for the admin people so how do you authinticate?
+Explain Action filters?
+
+Javascript frame work and jquery on Problem solving:
+Radio button?
+We need to find which radio button selected from the javascript or Jquary? and how many ways we can find it? because its purely HTML page?
+_________________________________________________________________________
+1.I have employee class list
+Examples: salary, HR
+Top five salaries we need to find? how do we?
+
+2.I have similar kind of data:
+I have manager
+Another manager
+Team lead
+Module lead
+Developer 
+Tester
+We need to strore this kind of data.
+if you take any module lead who is the superviser?
+
+_____________________________________________________________________________
+I have another html page. we need to reload every page so how can we do that?
+Any idea of Metter tax?
+Any idea of set time out and set intervel?
+Any idea about MVC architecture?
+Any idea of action filters in MVC?
+
+Do you have any idea about set intervel methods?
+
+_____________________________________________________________________________
+Any idea of SQL or query?
+How we can analyze the store processor?
+
+I have one table if you apply more non clusted index to the table what is the main dis advantage?
+__________________________________________________
+
+
+How we can write Data into XML format?

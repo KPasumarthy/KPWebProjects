@@ -1,0 +1,91 @@
+Given a N by M matrix of numbers, print out the matrix in a clockwise spiral.
+
+Input:
+
+ [
+   1    2    3
+   4    5    6
+   7    8    9
+ ]
+
+Output:
+
+     [      top
+       ------------>
+       1    2    3 |
+     ------->      |
+left ^ 4    5    6 | right
+     | 7    8    9 |
+     <------------ v
+         bottom
+
+     ]
+
+
+    1 2 3 6 9 8 7 4 5
+    
+initial direction is left to right
+next direction is opposite (right to left) and so
+index of the array would start at 0 and print until the end
+for next row index would start at length
+
+
+variable for axis (left/right. up/down)
+track array position of already printed rows
+when spiral logic jumps to the top (up), we use array position for up and add 1
+when spiral logic jumps to the bottom (down), we use the array position for down and decrement 1
+
+We track left and right by toggling last horizontal direction
+
+We can toggle up and down the same way
+
+perhaps a variable to track both vertical and horizontal
+
+Console.Writeln("Please enter the array width in integer:");
+Console.Readln();
+int width = Console.Readline();
+
+
+Console.Writeln("Please enter the array height in integer:");
+Console.Readln();
+int width = Console.Readline();
+
+PrintOutput(intputArray){
+
+top = 0
+bottom = n-1
+left =0
+right = n-1
+
+
+Every time direction changes, the width of the array to read must be decremented by 1 to honor spiral logic
+int colCount = 0;
+int rowCount = 0;
+while(top)
+{
+Console.Println(array[rowCount][colCount);
+colcount++;
+if(colCount == arrayWidth)
+top = false;
+}
+rowCount = array.length - rowCount;
+
+while(!top)
+{
+Console.Println(array[rowCount][colCount);
+colcount--;
+if(colCount == 0)
+{
+top = true;
+rowCount = rowCount - arrayHeight;
+}
+}
+
+___________________________________________________________
+
+// Merging into single arrary without any duplicates order also should maintained
+
+Array1 = {-1,0,0,10,15,20,25,30}
+Array2 = {0,1,1,2,8,9,20}
+
+Output {-1,0,1,2,8,9,10,15,20,25,30}

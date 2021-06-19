@@ -8,7 +8,12 @@ Select * From dbo.[Parcels]
 
 Use [AdventureWorks2017]
 Select * From Person.Person 
+<<<<<<< HEAD
+Select * From INFORMATION_SCHEMA.COLUMNS Where TABLE_NAME = N'Person'
+SELECT Top 100 * FROM Person.Person
+=======
 Select * From INFORMATION_SCHEMA.COLUMNS Where TABLE_NAME = N'Person.Person'
+>>>>>>> origin/kpDevBranch
 Select * From Person.Person Where BusinessEntityID = 5
 Select * From Person.Person
 Select * From Person.Person Order By BusinessEntityID DESC
