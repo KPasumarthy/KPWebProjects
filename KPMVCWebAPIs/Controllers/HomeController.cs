@@ -22,8 +22,6 @@ namespace KPMVCWebAPIs.Controllers
             return View();
         }
 
-<<<<<<< HEAD
-=======
         public ActionResult Demo()
         {
             ViewBag.Message = "Your AngularJS.0 page.";
@@ -32,6 +30,5 @@ namespace KPMVCWebAPIs.Controllers
         }
 
 
->>>>>>> origin/kpDevBranch
     }
 }
