@@ -1,0 +1,7 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+	<s:Body>
+		<SendAttachmentResponse xmlns="http://tempuri.org/">
+			<SendAttachmentResult>KP : SendAttachment : True</SendAttachmentResult>
+		</SendAttachmentResponse>
+	</s:Body>
+</s:Envelope>

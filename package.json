@@ -1,0 +1,11 @@
+{
+  "name": "someProj",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {},
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@angular/cli": "^9.0.5"
+  }
+}

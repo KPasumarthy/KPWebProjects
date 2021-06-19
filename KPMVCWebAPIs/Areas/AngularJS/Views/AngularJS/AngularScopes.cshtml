@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title ng-bind="helloAngular"></title>
+</head>
+<body>
+    @{
+        ViewBag.Title = "AngularJSScopes";
+    }
+
+    <h2>AngularJS : Angular Scopes & Angular Controllers</h2>
+
+    <style>
+        table, th, td {
+            border: 2px solid green;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+            table tr:nth-child(odd) {
+                background-color: #f1f1f1;
+            }
+
+            table tr:nth-child(even) {
+                background-color: #FFF0F5;
+            }
+    </style>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+    <script>
+        var myApp = angular.module('myApp', []);
+
+        myApp.run(function ($rootScope) {
+            $rootScope.myColor = 'green';
+        });
+
+        myApp.filter('myFormat', function () {
+            return function (x) {
+                var i, c, txt = "";
+                for (i = 0; i < x.length; i++) {
+                    c = x[i];
+                    if (i % 2 == 0) {
+                        c = c.toUpperCase();
+                    }
+                    txt += c;
+                }
+                return txt;
+            };
+        });
+
+        myApp.controller('GreetingNamesController', ['$scope', function ($scope) {
+            $scope.greeting = 'Hola';
+            $scope.myColor = 'magenta';
+            $scope.names = [
+                                { name: 'Jani', lastName: 'Trump',  country: 'Norway' },
+                                { name: 'Hege', lastName: 'Clinton', country: 'Sweden' },
+                                { name: 'Kai', lastName: 'Bush', country: 'Denmark' },
+                                { name: 'Carl', lastName: 'Kelvin', country: 'Sweden' },
+                                { name: 'Margareth', lastName: 'Tatcher', country: 'England' },
+                                { name: 'Hege', lastName: 'Heinrich', country: 'Norway' },
+                                { name: 'Joe', lastName: 'Dickins', country: 'Denmark' },
+                                { name: 'Gustav', lastName: 'Niemann', country: 'Sweden' },
+                                { name: 'Birgit', lastName: 'Fischer', country: 'Denmark' },
+                                { name: 'Mary', lastName: 'Poppins', country: 'England' },
+                                { name: 'Kai', lastName: 'Strobel', country: 'Norway' }
+            ];
+            $scope.orderByMe = (function (x) {
+                $scope.myOrderBy = x;
+            });
+        }]);
+    </script>
+
+    <div id="idRootScope">
+        <br />
+        <h3>AngularJS ng-Controller, Root Scope & Local Scope Operator</h3>
+        <br/>
+        <h4>The rootScope's favorite color : {{myColor}}</h4>
+        <input style="background-color:{{myColor}}" ng-model="myColor" value="{{myColor}}">
+        <br />
+    </div>
+
+    <div id="idLocalScope" ng-controller="GreetingNamesController">
+        <br />
+        <h4>The local scope's favorite color : {{myColor}}</h4>
+        <input style="background-color:{{myColor}}" ng-model="myColor" value="{{myColor}}">
+        <br />
+        <input type="text" ng-model="holaAngular" />
+        <h4>{{ greeting + " " + holaAngular + "!!!" }}</h4>
+        <br />
+        <h3>AngularJS ng-repeat Directive & ng-controller</h3>
+        <ul>
+            <li ng-repeat="x in names">
+                {{ x.name + ', ' + x.country}}
+            </li>
+        </ul>
+        <br />
+    </div>
+    
+    <div id="idngFilterOrderBy"  ng-controller="GreetingNamesController">
+        <br />
+        <h3>AngularJS Filters</h3>
+        <br />
+        <h4>AngularJS sorted by Country using the ng-Filter 'orderBy' Country</h4>
+        <ul>
+            <li ng-repeat="x in names | orderBy : 'country'">
+                {{ x.name + ', ' + x.lastName + ', ' + x.country}}
+            </li>
+        </ul>
+        <br />
+    </div>
+
+    <div id="idngFilterByLetterI" ng-controller="GreetingNamesController">
+        <br />
+        <h4>AngularJS sorted by names containing the letter 'i' </h4>
+        <ul>
+            <li ng-repeat="x in names | filter : 'i'">
+                {{ x.name + ', ' + x.lastName + ', ' + x.country}}
+            </li>
+        </ul>
+        <br />
+    </div>
+
+    <div id="idngClick" ng-controller="GreetingNamesController">
+        <br />
+        <h4>AngularJS 'ng-click' directive on the table headers changes the sorting order of the array.</h4>
+        <table border="1" width="50%">
+            <tr>
+                <th ng-click="orderByMe('name')">SNo</th>
+                <th ng-click="orderByMe('name')">Name</th>
+                <th ng-click="orderByMe('lastName')">LastName</th>
+                <th ng-click="orderByMe('country')">Country</th>
+            </tr>
+            <tr ng-repeat="x in names | orderBy : myOrderBy">
+                <td>{{ $index + 1 }}</td>
+                <td>{{x.name}}</td>
+                <td>{{x.lastName}}</td>
+                <td>{{x.country}}</td>
+            </tr>
+        </table>
+        <br />
+    </div>
+
+    <div id="idngCustomFilter" ng-controller="GreetingNamesController">
+        <br />
+        <h4>AngularJS 'ng' Custom Filter 'myFormat' will format every other character to uppercase.</h4>
+        <ul >
+            <li ng-repeat="x in names">
+                {{x.name | myFormat}} {{x.lastName | myFormat }}
+            </li>
+        </ul>
+
+        <br />
+    </div>
+
+</body>
+</html>

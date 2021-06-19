@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:m0="http://schemas.datacontract.org/2004/07/KPWCFService">
+	<SOAP-ENV:Body>
+		<m:GetDataUsingDataContract xmlns:m="http://tempuri.org/">
+			<m:composite>
+				<m0:BoolValue>true</m0:BoolValue>
+				<m0:StringValue>KP : AltovaXML DataContract : 12/13/2020 10:00AM EST</m0:StringValue>
+			</m:composite>
+		</m:GetDataUsingDataContract>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

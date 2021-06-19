@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SOAP-ENV:Body>
+		<m:SendAttachment xmlns:m="http://tempuri.org/">
+			<m:pFileBytes>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</m:pFileBytes>
+			<m:pFileName>KPAltovaXMLWCFSendAttachment.txt</m:pFileName>
+		</m:SendAttachment>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
