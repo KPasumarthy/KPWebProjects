@@ -19,7 +19,7 @@
             var ssn0 = /\D+\d{9}\D+/;   //KP : SSN : 123-45-6789
             var ssn1 = /\D+\d{3}-\d{2}-\d{4}\D+/;   //KP : SSN : 123-45-6789
             var ssn2 = /\D+\d{3}.\d{2}.\d{4}\D+/;   //KP : SSN : 123.45.6789
-            if (ssn1.test(input) || ssn1.test(input)) {
+            if (ssn1.test(input) || ssn2.test(input)) {
                 alert("KP : Regex - SSN in Entered Text ! ");
             }
             else {
@@ -28,7 +28,7 @@
 
 
             var ein1 = /\D+\d{2}-\d{7}\D+/;   //KP : EIN : 12-3456789
-            var ein2 = /\D+\d{2}.\d{4}\D+/;   //KP : EIN : 12.3456789
+            var ein2 = /\D+\d{2}.\d{7}\D+/;   //KP : EIN : 12.3456789
             if (ein1.test(input) || ein2.test(input)) {
                 alert("KP : Regex - EIN in Entered Text ! ");
             }
