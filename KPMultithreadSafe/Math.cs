@@ -16,7 +16,7 @@ namespace KPMultithreadSafe
         {
 
             int count = 0;
-            for (long i = 0; i < 1000; i++)
+            for (long i = 0; i < 10; i++)
             {
                 lock (this)     //KP : Lock thread, makes the Tread Safe!!
                 {
@@ -24,7 +24,8 @@ namespace KPMultithreadSafe
                     Num2 = obj.Next(1, 2);
                     int result = Num1 / Num2;
 
-                    Console.WriteLine("KP : Child Thread Safe using 'lock' : Thread Loop Count = " + ++count +  " Num1 = " + Num1 + " Num2 = " + Num2);
+                    Console.WriteLine("KP : Child Thread Safe using 'lock' : Thread Loop Count = " + 
+                                        ++count +  " Num1 = " + Num1 + " Num2 = " + Num2);
 
                     Num1 = 0;
                     Num2 = 0;
