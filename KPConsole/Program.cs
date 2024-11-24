@@ -41,10 +41,16 @@ namespace KPConsole
             ///////KP : Question : PrintFizzBuzz///*/
 
 
-            ///*/////KP : Question : Interview Questions
-            InterviewQuestions.PrintInterviewQuestions();
-            ///*/////KP : Question : Interview Questions
-            ///
+            ///////*/////KP : Question : Interview Questions
+            //InterviewQuestions.PrintInterviewQuestions();
+            ///////*/////KP : Question : Interview Questions
+            ///////
+
+
+            /////////*/////KP : Question : Interview Questions : DemoEnum
+            DemoEnum.PrintDemoEnum();
+            /////////*/////KP : Question : Interview Questions : DemoEnum
+            ///////
 
 
             ///////*/////KP : Question : Interview Questions : DemoStatic
@@ -52,6 +58,8 @@ namespace KPConsole
             //t.Print();
             ///////*/////KP : Question : Interview Questions : DemoStatic
             /////
+
+
 
 
             return true;

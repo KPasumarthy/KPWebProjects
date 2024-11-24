@@ -32,11 +32,19 @@ namespace KPConsole
             FizzBuzz.PrintFizzBuzz(n);
             FizzBuzz.PrintFizzBuzzComplex(n);
             /////KP : Question : PrintFizzBuzz///*/
+            ///
+
+
+
+            ///////*/////KP : Question : Interview Questions : DemoEnum
+            DemoEnum.PrintDemoEnum();
+            ///////*/////KP : Question : Interview Questions : DemoEnum
+            /////
+
 
 
             /////*/////KP : Question : Interview Questions : DemoStatic
             Console.WriteLine("KP : InterviewQuestion : What is the Ouput of the DemoStatic Program ? ");
-
             DemoStatic t = new DemoStatic();
             t.Print();
             /////*/////KP : Question : Interview Questions : DemoStatic
