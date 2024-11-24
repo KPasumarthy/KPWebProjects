@@ -35,6 +35,8 @@ namespace KPConsole
 
 
             /////*/////KP : Question : Interview Questions : DemoStatic
+            Console.WriteLine("KP : InterviewQuestion : What is the Ouput of the DemoStatic Program ? ");
+
             DemoStatic t = new DemoStatic();
             t.Print();
             /////*/////KP : Question : Interview Questions : DemoStatic
