@@ -44,6 +44,15 @@ namespace KPConsole
             ///*/////KP : Question : Interview Questions
             InterviewQuestions.PrintInterviewQuestions();
             ///*/////KP : Question : Interview Questions
+            ///
+
+
+            ///////*/////KP : Question : Interview Questions : DemoStatic
+            //DemoStatic t = new DemoStatic();
+            //t.Print();
+            ///////*/////KP : Question : Interview Questions : DemoStatic
+            /////
+
 
             return true;
         }

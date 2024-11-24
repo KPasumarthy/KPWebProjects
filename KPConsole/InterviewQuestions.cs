@@ -34,6 +34,14 @@ namespace KPConsole
             /////KP : Question : PrintFizzBuzz///*/
 
 
+            /////*/////KP : Question : Interview Questions : DemoStatic
+            DemoStatic t = new DemoStatic();
+            t.Print();
+            /////*/////KP : Question : Interview Questions : DemoStatic
+            ///
+
+
+
 
             /* KP : Hacker Rank Questions : Q & A 
             Alex works at a clothing store.There is a large pile of socks that must be paired by color for sale.Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.
