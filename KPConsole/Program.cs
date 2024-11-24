@@ -33,6 +33,18 @@ namespace KPConsole
 
             Console.WriteLine(input);
 
+            /////*/////KP : Question : PrintFizzBuzz
+            //Int64 n = 15;
+            ////PrintFizzBuzz(n);
+            //FizzBuzz.PrintFizzBuzz(n);
+            //FizzBuzz.PrintFizzBuzzComplex(n);
+            ///////KP : Question : PrintFizzBuzz///*/
+
+
+            ///*/////KP : Question : Interview Questions
+            InterviewQuestions.PrintInterviewQuestions();
+            ///*/////KP : Question : Interview Questions
+
             return true;
         }
 
@@ -41,9 +53,4 @@ namespace KPConsole
 
 
 
-///*/////KP : Question : PrintFizzBuzz
-//Int64 n = 15;
-////PrintFizzBuzz(n);
-//FizzBuzz.PrintFizzBuzz(n);
-//FizzBuzz.PrintFizzBuzzComplex(n);
-///////KP : Question : PrintFizzBuzz///*/
+
