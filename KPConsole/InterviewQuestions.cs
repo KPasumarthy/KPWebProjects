@@ -35,13 +35,11 @@ namespace KPConsole
             ///
 
 
-
             ///////*/////KP : Question : Interview Questions : DemoEnum
             DemoEnum.PrintDemoEnum();
             ///////*/////KP : Question : Interview Questions : DemoEnum
             /////
-
-
+            ///
 
             /////*/////KP : Question : Interview Questions : DemoStatic
             Console.WriteLine("KP : InterviewQuestion : What is the Ouput of the DemoStatic Program ? ");
@@ -51,6 +49,14 @@ namespace KPConsole
             ///
 
 
+            /////*/////KP : Question : Interview Questions : PrintValue
+            Console.WriteLine("KP : InterviewQuestion : What is the Ouput of the PrintValue Program ? ");
+            PrintValue t1 = new PrintValue();
+            t1.Print();
+            /////*/////KP : Question : Interview Questions : PrintValue
+            ///
+
+  
 
 
             /* KP : Hacker Rank Questions : Q & A 
