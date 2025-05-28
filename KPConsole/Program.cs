@@ -28,36 +28,47 @@ namespace KPConsole
             Console.ReadLine();
         }
 
+
+        //static void Main()
+        //{
+        //    //    ////KP : Console WriteLine
+        //    Console.WriteLine("KP : Hello Kailash World!");
+
+        //    //    ////KP : Console Wait to ReadLine
+        //    Console.ReadLine();
+        //}
+
+
         static bool TestFunction(String input)
         {
 
             Console.WriteLine(input);
 
-            /////*/////KP : Question : PrintFizzBuzz
-            //Int64 n = 15;
-            ////PrintFizzBuzz(n);
-            //FizzBuzz.PrintFizzBuzz(n);
-            //FizzBuzz.PrintFizzBuzzComplex(n);
-            ///////KP : Question : PrintFizzBuzz///*/
+            ///////*/////KP : Question : PrintFizzBuzz
+            Int64 n = 20;
+            //PrintFizzBuzz(n);
+            FizzBuzz.PrintFizzBuzz(n);
+            FizzBuzz.PrintFizzBuzzComplex(n);
+            /////////KP : Question : PrintFizzBuzz///*/
 
 
-            ///////*/////KP : Question : Interview Questions
-            //InterviewQuestions.PrintInterviewQuestions();
-            ///////*/////KP : Question : Interview Questions
+            /////////*/////KP : Question : Interview Questions
+            InterviewQuestions.PrintInterviewQuestions();
+            /////////*/////KP : Question : Interview Questions
+            /////////
+
+
+            ///////////*/////KP : Question : Interview Questions : DemoEnum
+            DemoEnum.PrintDemoEnum();
+            ///////////*/////KP : Question : Interview Questions : DemoEnum
+            /////////
+
+
+            /////////*/////KP : Question : Interview Questions : DemoStatic
+            DemoStatic t = new DemoStatic();
+            t.Print();
+            /////////*/////KP : Question : Interview Questions : DemoStatic
             ///////
-
-
-            /////////*/////KP : Question : Interview Questions : DemoEnum
-            //DemoEnum.PrintDemoEnum();
-            /////////*/////KP : Question : Interview Questions : DemoEnum
-            ///////
-
-
-            ///////*/////KP : Question : Interview Questions : DemoStatic
-            //DemoStatic t = new DemoStatic();
-            //t.Print();
-            ///////*/////KP : Question : Interview Questions : DemoStatic
-            /////
 
 
             /////*/////KP : Question : Interview Questions : PrintValue
@@ -66,6 +77,23 @@ namespace KPConsole
             t1.Print();
             /////*/////KP : Question : Interview Questions : PrintValue
             ///
+
+
+            /////*/////KP : Question : Interview Questions : Print Fibonacci Series
+            Console.WriteLine("KP : InterviewQuestion : Print Fibonacci Series for n Elements ");
+            //Int64 n = 25;
+            Fibonacci.PrintFibonacciSeries(n);
+
+            /////*/////KP : Question : Interview Questions : Print Fibonacci Series
+            ///
+
+
+
+            ///////*/////KP : Question : PrintIntegers.PrintIntegerValue()
+            PrintIntegers.PrintIntegerValue();
+            Console.WriteLine($"KP : PrintIntegers.GetEven() : Even Numbers : {PrintIntegers.GetEven(n)}");
+            /////////KP : Question : PrintIntegers.PrintIntegerValue()///*/
+
 
 
 
