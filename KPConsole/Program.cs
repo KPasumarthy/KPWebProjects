@@ -91,7 +91,8 @@ namespace KPConsole
 
             ///////*/////KP : Question : PrintIntegers.PrintIntegerValue()
             PrintIntegers.PrintIntegerValue();
-            Console.WriteLine($"KP : PrintIntegers.GetEven() : Even Numbers : {PrintIntegers.GetEven(n)}");
+            Console.WriteLine("KP : PrintIntegers.GetEven() : Even Numbers : [ " + String.Join(", ", PrintIntegers.GetEven(n).ToArray()) + " ]");
+            Console.WriteLine("KP : PrintIntegers.GetOdd()  : Odd Numbers  : [ " + String.Join(", ", PrintIntegers.GetOdd(n).ToArray()) + " ]");
             /////////KP : Question : PrintIntegers.PrintIntegerValue()///*/
 
 
