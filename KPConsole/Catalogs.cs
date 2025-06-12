@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 //using Newtonsoft.Json;
 
 namespace KPConsole
@@ -90,8 +91,6 @@ namespace KPConsole
                 string jsonString = System.Text.Json.JsonSerializer.Serialize<Catalog>(catalog);
                 Console.WriteLine("KP : Print Catalog as JSON : ");
                 Console.WriteLine(jsonString);
-
-
 
                 jsonString = @"{
 	                        ""books"": [{
@@ -186,6 +185,17 @@ namespace KPConsole
                         }";
                 Console.WriteLine("KP : Print Books Catalog as JSON : ");
                 Console.WriteLine(jsonString);
+
+                var json = JsonSerializer.Serialize(jsonString);
+                Console.WriteLine("KP : Print Books Catalog as JSON Serialize : ");
+                Console.WriteLine(json);
+
+
+                // Fix for CS0411: Specify the type argument explicitly for JsonSerializer.Deserialize
+                var jsonDeserialize = JsonSerializer.Deserialize<object>(jsonString);
+                Console.WriteLine("KP : Print Books Catalog as JSON Deserialize : ");
+                Console.WriteLine(jsonDeserialize);
+
 
                 //var collection = new CatalogCollection();
                 //collection.Catalogs.Add(catalog);
