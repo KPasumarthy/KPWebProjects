@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+//using Newtonsoft.Json;
+using System.Text.Json;
 using Newtonsoft.Json;
+//using Newtonsoft.Json;
 
 namespace KPConsole
 {
@@ -49,6 +52,133 @@ namespace KPConsole
 
             Console.WriteLine("KP : Catalogs : KPBuildNOrganizeCatalogs !");
 
+
+            try
+            {
+                //KP : Remove the Http Layer
+                //var headers = GetCredentialHeaders();
+
+                // Build the catalogs endpoint URL.
+
+                //KP : Remove the Http Layer
+                //var url = string.Format(CatalogsUri, merchantId);
+
+                // Get and print the current list of catalogs.
+
+
+
+                //KP : Remove the Http Layer
+                //var collection = GetResource(url, headers, typeof(CatalogCollection)) as CatalogCollection;
+                ///PrintCatalogs(collection);
+                //var weatherForecast = new WeatherForecast
+                //{
+                //    Date = DateTime.Parse("2019-08-01"),
+                //    TemperatureCelsius = 25,
+                //    Summary = "Hot"
+                //};
+                //string jsonString = JsonSerializer.Serialize<WeatherForecast>(weatherForecast);
+                //Console.WriteLine(jsonString);
+                var catalog = new Catalog
+                {
+                    Id = 1,
+                    Name = "KP : Sample Catalog",
+                    Market = "KP : Sample Market",
+                    IsPublishingEnabled = true,
+                    IsDefault = true
+                };
+                string jsonString = System.Text.Json.JsonSerializer.Serialize<Catalog>(catalog);
+                Console.WriteLine("KP : Print Catalog as JSON : ");
+                Console.WriteLine(jsonString);
+
+                //var collection = new CatalogCollection();
+                //collection.Catalogs.Add(catalog);
+                //PrintCatalogs(collection);
+
+                //// Add a couple of catalogs.
+
+                //var catalogs = AddCatalogs(url, headers);
+
+                //// Get and print the current list of catalogs.
+
+                //collection = GetResource(url, headers, typeof(CatalogCollection)) as CatalogCollection;
+                //PrintCatalogs(collection);
+
+                //// Update the first catalog that we added
+                //// to enable it for publishing. When you update the 
+                //// catalog, you must specify both Name and IsPublishingEnabled.
+
+                //Console.WriteLine("*** Updating Catalog ***\n");
+                //var catalogUrl = string.Format(CatalogUri, merchantId, catalogs[0].Id);
+                //var catalog = new Catalog()
+                //{
+                //    Name = catalogs[0].Name,
+                //    IsPublishingEnabled = true
+                //};
+                //UpdateResource(catalogUrl, headers, catalog);
+
+                //// Get and print the updated catalog.
+
+                //var updatedCatalog = GetResource(catalogUrl, headers, typeof(Catalog)) as Catalog;
+                //PrintCatalogDetails(updatedCatalog);
+
+                //// Delete the catalogs that we created.
+
+                //DeleteCatalogs(CatalogUri, headers, merchantId, catalogs);
+
+                //// Get and print the current list of catalogs.
+
+                //collection = GetResource(url, headers, typeof(CatalogCollection)) as CatalogCollection;
+                //PrintCatalogs(collection);
+            }
+            catch (WebException e)
+            {
+                Console.WriteLine("\n" + e.Message);
+
+                HttpWebResponse response = (HttpWebResponse)e.Response;
+
+                // If the request is bad, the API returns the errors in the 
+                // body of the request. For cases where the path may be valid, but
+                // the resource does not belong to the user, the API returns not found.
+
+                if (HttpStatusCode.BadRequest == response.StatusCode ||
+                    HttpStatusCode.NotFound == response.StatusCode ||
+                    HttpStatusCode.InternalServerError == response.StatusCode)
+                {
+                    using (Stream stream = response.GetResponseStream())
+                    {
+                        StreamReader reader = new StreamReader(stream);
+                        string json = reader.ReadToEnd();
+                        reader.Close();
+
+                        // Deserialize error string into errors object.
+
+                        try
+                        {
+                            //KP : var errors = JsonConvert.DeserializeObject<ContentError>(json);
+                            //PrintErrors(errors);
+                        }
+                        catch (Exception deserializeError)
+                        {
+                            // This case occurs when the path is not valid.
+
+                            if (HttpStatusCode.NotFound == response.StatusCode)
+                            {
+                                Console.WriteLine("Path not found: " + response.ResponseUri);
+                            }
+                            else
+                            {
+                                Console.WriteLine(deserializeError.Message);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("\n" + e.Message);
+            }
+
+
         }
 
 
@@ -72,7 +202,7 @@ namespace KPConsole
                 var reader = new StreamReader(responseStream);
                 string json = reader.ReadToEnd();
                 reader.Close();
-                resource = JsonConvert.DeserializeObject(json, resourceType);
+                //resource = JsonConvert.DeserializeObject(json, resourceType);
             }
 
             return resource;
@@ -138,7 +268,7 @@ namespace KPConsole
                 var reader = new StreamReader(responseStream);
                 var jsonOut = reader.ReadToEnd();
                 reader.Close();
-                catalogOut = JsonConvert.DeserializeObject<Catalog>(jsonOut);
+                //catalogOut = JsonConvert.DeserializeObject<Catalog>(jsonOut);
             }
 
             return catalogOut.Id;
@@ -162,7 +292,7 @@ namespace KPConsole
                 var reader = new StreamReader(responseStream);
                 var jsonOut = reader.ReadToEnd();
                 reader.Close();
-                error = JsonConvert.DeserializeObject<ContentError>(jsonOut);
+                //error = JsonConvert.DeserializeObject<ContentError>(jsonOut);
             }
 
             return error;
@@ -263,65 +393,74 @@ namespace KPConsole
         }
 
 
+        //KP : public class Catalog as Json
+        //{
+        //  "id": null,
+        //  "name": null,
+        //  "market": null,
+        //  "name": null,
+        //  "isPublishingEnabled": false,
+        //  "isDefault": null,
+        //}
         public class Catalog
         {
-            [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
+            //[JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
             public ulong Id { get; set; }
 
-            [JsonProperty("name")]
+            //[JsonProperty("name")]
             public string Name { get; set; }
 
-            [JsonProperty("market", DefaultValueHandling = DefaultValueHandling.Ignore)]
+            //[JsonProperty("market", DefaultValueHandling = DefaultValueHandling.Ignore)]
             public string Market { get; set; }
 
-            [JsonProperty("isPublishingEnabled")]
+            //[JsonProperty("isPublishingEnabled")]
             public Boolean IsPublishingEnabled { get; set; }
 
-            [JsonProperty("isDefault", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+            //[JsonProperty("isDefault", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
             public Boolean IsDefault { get; set; }
         }
 
         public class CatalogCollection
         {
-            [JsonProperty("catalogs")]
+            //[JsonProperty("catalogs")]
             public List<Catalog> Catalogs { get; set; }
         }
 
         // Classes used to handle errors.
         public class Error
         {
-            [JsonProperty("location")]
+            //[JsonProperty("location")]
             public string Location { get; set; }
 
-            [JsonProperty("locationType")]
+            //[JsonProperty("locationType")]
             public string LocationType { get; set; }
 
-            [JsonProperty("domain")]
+            //[JsonProperty("domain")]
             public string Domain { get; set; }
 
-            [JsonProperty("message")]
+            //[JsonProperty("message")]
             public string Message { get; set; }
 
-            [JsonProperty("reason")]
+            //[JsonProperty("reason")]
             public string Reason { get; set; }
         }
 
         public class ErrorCollection
         {
-            [JsonProperty("code")]
+            //[JsonProperty("code")]
             public string Code { get; set; }
 
-            [JsonProperty("errors")]
+            //[JsonProperty("errors")]
             public List<Error> Errors { get; set; }
 
-            [JsonProperty("message")]
+            //[JsonProperty("message")]
             public string Message { get; set; }
 
         }
 
         public class ContentError
         {
-            [JsonProperty("error")]
+            //[JsonProperty("error")]
             public ErrorCollection Error { get; set; }
         }
 
