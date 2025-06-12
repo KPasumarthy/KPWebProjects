@@ -6,12 +6,10 @@ using System.Linq;
 using WebGrease.Css.Ast.Selectors;
 using Microsoft.Ajax.Utilities;
 using System.Collections;
-using Newtonsoft.Json;
-using System.Net;
 
 namespace KPConsole
 {
-    class Program
+    class Program04
     {
 
         static void Main(string[] args)
@@ -21,11 +19,15 @@ namespace KPConsole
 
             /////KP : Question : 0
             Int64 n = 15;
-            //KPConsole.Catalogs.KPPrintCatalogs(n);
-            KPConsole.Catalogs.KPBuildNOrganizeCatalogs();
+            KPConsole.Catalogs.PrintCatalogs(n);
             Console.ReadLine();
             /////KP : Question : 0
             ///
+
+
+
+
+
 
 
             /////KP : Question : 1
@@ -53,13 +55,13 @@ namespace KPConsole
             //Console.ReadLine();
             ///////KP : Question : 2
 
-            /////////KP : Question : 3
-            ////Int64 n = 15;
-            //////PrintFizzBuzz(n);
-            //FizzBuzz.PrintFizzBuzz(n);
-            //FizzBuzz.PrintFizzBuzzComplex(n);
-            /////////KP : Question : 3
-            ///////
+            ///////KP : Question : 3
+            //Int64 n = 15;
+            ////PrintFizzBuzz(n);
+            FizzBuzz.PrintFizzBuzz(n);
+            FizzBuzz.PrintFizzBuzzComplex(n);
+            ///////KP : Question : 3
+            /////
 
             ///////KP : Question : 4
             ////Write a Funtion to Rotate the given array by K times
@@ -168,4 +170,7 @@ namespace KPConsole
 
     }
 }
+
+
+
 

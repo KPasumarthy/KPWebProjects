@@ -13,6 +13,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Program05WIP.cs.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Program.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Angular.UI.Bootstrap" Version="2.5.0" />
     <PackageReference Include="Antlr" Version="3.5.0.2" />
     <PackageReference Include="Azure.Core" Version="1.44.1" />
