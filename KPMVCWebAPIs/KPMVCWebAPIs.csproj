@@ -12,7 +12,6 @@
     <Compile Remove="Controllers\ASyncValuesController.cs" />
     <Compile Remove="Controllers\KPWCFServiceClientController.cs" />
     <Compile Remove="Controllers\PersonsController.cs" />
-    <Compile Remove="Controllers\ValuesController.cs" />
   </ItemGroup>
 
   <ItemGroup>
