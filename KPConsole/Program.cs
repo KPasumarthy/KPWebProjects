@@ -11,7 +11,74 @@ namespace KPConsole
 {
     class Program
     {
+
         static void Main(string[] args)
+        {
+            Console.WriteLine("KP : Hello Kailash World!");
+
+
+            /////KP : Question : 0
+            Int64 n = 15;
+            KPConsole.Catalogs.PrintCatalogs(n);
+            Console.ReadLine();
+            /////KP : Question : 0
+            ///
+
+
+
+
+
+
+
+            /////KP : Question : 1
+            //int a, b = 0;
+            //a = 5;
+            //b += a;     //b = b+a; b = 0+5 = 5
+            //Console.WriteLine("Opeartion : b += a");
+            //Console.WriteLine("a = " + a);
+            //Console.WriteLine("b = " + b);
+
+            /////KP : Question : 1
+
+            ////////KP : Question : 2
+            //var arr = new List<int>() { 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }.ToArray();
+            //////{ 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }
+            //////{-25, -4, - 1, - 1, 1, 9, 10, 10, 12, 15, 22, 33, 33, 33, 34, 55, 81, 90, 98, 100, 125 }
+
+            //int target = 100;
+            //IList<IList<int>> triplets = ThreeSum(arr, target);
+
+            //foreach (var item in triplets)
+            //{
+            //    Console.WriteLine(item[0].ToString() + "," + item[1].ToString() + "," + item[2].ToString());
+            //}
+            //Console.ReadLine();
+            ///////KP : Question : 2
+
+            ///////KP : Question : 3
+            //Int64 n = 15;
+            ////PrintFizzBuzz(n);
+            FizzBuzz.PrintFizzBuzz(n);
+            FizzBuzz.PrintFizzBuzzComplex(n);
+            ///////KP : Question : 3
+            /////
+
+            ///////KP : Question : 4
+            ////Write a Funtion to Rotate the given array by K times
+
+            ////Input  : arr[] = { 1, 2, 3, 4, 5 }
+            ////K = 3
+            ////Output: { 4, 5, 1, 2, 3}
+            //int[] arr = { 1, 2, 3, 4, 5 };
+            //int k = 3;
+            //int[] arrNew = rotateArray(arr, k);
+            //Console.Write("[");
+            //arrNew.ToList().ForEach(i => Console.Write(i.ToString() + ", "));
+            //Console.WriteLine("]");
+            ///////KP : Question : 4
+        }
+
+        static void Main00(string[] args)
         {
             Console.WriteLine("KP : Hello Kailash World!");
 
