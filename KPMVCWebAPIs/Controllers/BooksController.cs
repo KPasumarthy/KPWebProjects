@@ -1,4 +1,5 @@
-﻿using System.Web.Http.Results;
+﻿using System.Text.Json.Nodes;
+using System.Web.Http.Results;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -111,6 +112,9 @@ namespace KPMVCWebAPIs.Controllers
         // Replace the invalid use of 'var' with an explicit type declaration for the field.
         private BookCollection bookCollection = new BookCollection();
         string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Literature", "books.json");
+        // Fix for CS0818: Initialize the implicitly-typed variable 'jsonObject' with a proper type.
+        JsonNode? jsonObject = null;
+        string fileContent = string.Empty; // Declare and initialize fileContent
 
         public BooksController()
         {
@@ -118,6 +122,21 @@ namespace KPMVCWebAPIs.Controllers
             jsonDeserialize = JsonConvert.DeserializeObject<object>(jsonString); // Fixed the issue by using JsonConvert.DeserializeObject
 
 
+            //// Fix for CS0818: Initialize the implicitly-typed variable 'jsonObject' with a proper type.
+            //JsonNode? jsonObject = null;
+            //string fileContent = string.Empty; // Declare and initialize fileContent
+            using (StreamReader sr = new StreamReader(filePath))
+            {
+                fileContent = sr.ReadToEnd(); // Assign the file content to fileContent
+
+                //jsonObject = JsonNode.Parse(jsonString);
+                jsonObject = JsonNode.Parse(fileContent);
+
+            }
+
+            Console.WriteLine("KP : Print Books Collection as JSON : ");
+            Console.WriteLine(fileContent);
+            Console.WriteLine(jsonObject);
 
             //// Fix for CS0103: Replace Server.MapPath with Path.Combine and Directory.GetCurrentDirectory
             ////var bookCollection = new BookCollection();
@@ -224,16 +243,21 @@ namespace KPMVCWebAPIs.Controllers
             //return Ok(new { Message = jsonDeserialize, RouteData = ControllerContext.RouteData.Values });
             //return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values });
 
-            string fileContent = string.Empty; // Declare and initialize fileContent
+            //// Fix for CS0818: Initialize the implicitly-typed variable 'jsonObject' with a proper type.
+            //JsonNode? jsonObject = null;
+            //string fileContent = string.Empty; // Declare and initialize fileContent
             using (StreamReader sr = new StreamReader(filePath))
             {
                 fileContent = sr.ReadToEnd(); // Assign the file content to fileContent
+
+                jsonObject = JsonNode.Parse(jsonString);
+
             }
 
             Console.WriteLine("KP : Print Books Collection as JSON : ");
             Console.WriteLine(fileContent);
-            return Ok(new { Message = fileContent, RouteData = ControllerContext.RouteData.Values });
-
+            //return Ok(new { Message = fileContent, RouteData = ControllerContext.RouteData.Values });
+            return Ok(new { Message = jsonObject, RouteData = ControllerContext.RouteData.Values });
         }
 
         [HttpGet("{id}")]   // GET /api/books/xyz
@@ -249,10 +273,7 @@ namespace KPMVCWebAPIs.Controllers
             //return Ok(new { Message = input, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = jsonDeserialize, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values, Id = id });
-
-            Console.WriteLine("KP : Print Books Collection as JSON : ");
-            Console.WriteLine(bookCollection.Books);
-            return Ok(new { Message = bookCollection, RouteData = ControllerContext.RouteData.Values, Id = id });
+            return Ok(new { Message = jsonObject, RouteData = ControllerContext.RouteData.Values, Id = id });
         }
 
         [HttpGet("int/{id:int}")] // GET /api/book/int/3
@@ -268,10 +289,7 @@ namespace KPMVCWebAPIs.Controllers
             //return Ok(new { Message = input, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = jsonDeserialize, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values, Id = id });
-
-            Console.WriteLine("KP : Print Books Collection as JSON : ");
-            Console.WriteLine(bookCollection.Books);
-            return Ok(new { Message = bookCollection.Books, RouteData = ControllerContext.RouteData.Values, Id = id });
+            return Ok(new { Message = jsonObject, RouteData = ControllerContext.RouteData.Values, Id = id });
         }
 
         [HttpGet("int2/{id}")]  // GET /api/books/int2/3
@@ -287,10 +305,7 @@ namespace KPMVCWebAPIs.Controllers
             //return Ok(new { Message = input, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = jsonDeserialize, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values, Id = id });
-
-            Console.WriteLine("KP : Print Books Collection as JSON : ");
-            Console.WriteLine(bookCollection.Books);
-            return Ok(new { Message = bookCollection, RouteData = ControllerContext.RouteData.Values, Id = id });
+            return Ok(new { Message = jsonObject, RouteData = ControllerContext.RouteData.Values, Id = id });
         }
     }
 }
