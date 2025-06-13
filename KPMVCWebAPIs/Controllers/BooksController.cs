@@ -260,7 +260,7 @@ namespace KPMVCWebAPIs.Controllers
             return Ok(new { Message = jsonObject, RouteData = ControllerContext.RouteData.Values });
         }
 
-        [HttpGet("{id}")]   // GET /api/books/xyz
+        [HttpGet("{id}")]   // GET /api/books/xyz   ///KP : GET : http://localhost:5249/api/books/9781593277574
         public IActionResult GetBook(string id)
         {
             string currentDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:sss tt");
@@ -270,10 +270,39 @@ namespace KPMVCWebAPIs.Controllers
             Console.WriteLine(jsonString);
             Console.WriteLine(jsonDeserialize);
 
+
+            //ObjectNode value = ((ObjectNode)JsonNode.get(0)).get("ObjectIWantToRetrieve")
+            //ObjectNode value = ((ObjectNode)jsonObject.get(0)).get("books");
+            // Correctly access the "books" property from the JsonNode object
+            JsonNode? books = null;
+            if (jsonObject != null && jsonObject["books"] != null)
+            {
+                books = jsonObject["books"];
+
+                //ObjectNode value = ((ObjectNode)books.get(0)).get("books");
+                // Ensure books is a JsonArray and iterate to find the matching book by id
+                if (books is JsonArray booksArray)
+                {
+                    foreach (var bookNode in booksArray)
+                    {
+                        if (bookNode is JsonObject bookObject && bookObject["isbn"]?.ToString() == id)
+                        {
+                            return Ok(new { Message = bookObject, RouteData = ControllerContext.RouteData.Values, Id = id });
+                        }
+                    }
+                }
+
+                return Ok(new { Message = books, RouteData = ControllerContext.RouteData.Values, Id = id });
+            }
+
             //return Ok(new { Message = input, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = jsonDeserialize, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values, Id = id });
-            return Ok(new { Message = jsonObject, RouteData = ControllerContext.RouteData.Values, Id = id });
+            //return Ok(new { Message = jsonObject, RouteData = ControllerContext.RouteData.Values, Id = id });
+            return Ok(new { Message = books, RouteData = ControllerContext.RouteData.Values, Id = id });
+
+
+
         }
 
         [HttpGet("int/{id:int}")] // GET /api/book/int/3
@@ -285,6 +314,31 @@ namespace KPMVCWebAPIs.Controllers
             Console.WriteLine("KP : Print Books Catalog as JSON : ");
             Console.WriteLine(jsonString);
             Console.WriteLine(jsonDeserialize);
+
+            ////ObjectNode value = ((ObjectNode)JsonNode.get(0)).get("ObjectIWantToRetrieve")
+            ////ObjectNode value = ((ObjectNode)jsonObject.get(0)).get("books");
+            //// Correctly access the "books" property from the JsonNode object
+            //JsonNode? books = null;
+            //if (jsonObject != null && jsonObject["books"] != null)
+            //{
+            //    books = jsonObject["books"];
+
+            //    //ObjectNode value = ((ObjectNode)books.get(0)).get("books");
+            //    // Ensure books is a JsonArray and iterate to find the matching book by id
+            //    if (books is JsonArray booksArray)
+            //    {
+            //        foreach (var bookNode in booksArray)
+            //        {
+            //            if (bookNode is JsonObject bookObject && bookObject["isbn"]?.ToString() == id.ToString())
+            //            {
+            //                return Ok(new { Message = bookObject, RouteData = ControllerContext.RouteData.Values, Id = id });
+            //            }
+            //        }
+            //    }
+
+            //    return Ok(new { Message = books, RouteData = ControllerContext.RouteData.Values, Id = id });
+            //}
+
 
             //return Ok(new { Message = input, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = jsonDeserialize, RouteData = ControllerContext.RouteData.Values, Id = id });
