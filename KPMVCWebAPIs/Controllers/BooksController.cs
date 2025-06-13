@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Nodes;
+using System.Web.Http.Cors;
 using System.Web.Http.Results;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +10,7 @@ using static KPMVCWebAPIs.Controllers.BooksController;
 
 namespace KPMVCWebAPIs.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")] // Provide required arguments
     [Route("api/[controller]")]
     [ApiController]
     public class BooksController : ControllerBase
