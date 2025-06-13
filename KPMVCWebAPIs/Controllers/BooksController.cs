@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Web.Http.Results;
+using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using static KPMVCWebAPIs.Controllers.BooksController;
 
 namespace KPMVCWebAPIs.Controllers
 {
@@ -103,10 +107,107 @@ namespace KPMVCWebAPIs.Controllers
         private readonly string json;
         private readonly object jsonDeserialize;
 
+
+        // Replace the invalid use of 'var' with an explicit type declaration for the field.
+        private BookCollection bookCollection = new BookCollection();
+        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Literature", "books.json");
+
         public BooksController()
         {
             json = JsonConvert.SerializeObject(jsonString);
             jsonDeserialize = JsonConvert.DeserializeObject<object>(jsonString); // Fixed the issue by using JsonConvert.DeserializeObject
+
+
+
+            //// Fix for CS0103: Replace Server.MapPath with Path.Combine and Directory.GetCurrentDirectory
+            ////var bookCollection = new BookCollection();
+            ////string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Literature", "books.json");
+            //using (StreamReader sr = new StreamReader(filePath))
+            //{
+            //    //bookCollection.Books = JsonConvert.DeserializeObject<List<Book>>(sr.ReadToEnd());
+            //    var fileContent = sr.ReadToEnd();
+            //    if (!string.IsNullOrEmpty(fileContent))
+            //    {
+            //        bookCollection.Books = JsonConvert.DeserializeObject<List<Book>>(fileContent) ?? new List<Book>();
+            //    }
+            //    else
+            //    {
+            //        bookCollection.Books = new List<Book>();
+            //    }
+
+            //}
+
+            //Console.WriteLine("KP : Print Books Catalog as JSON : ");
+            //Console.WriteLine(bookCollection.ToString);
+
+        }
+
+
+        //KP : public class Book as Json
+        //      public class Book
+        //{
+        //	"isbn": "9781593275846",
+        //	"title": "Eloquent JavaScript, Second Edition",
+        //	"subtitle": "A Modern Introduction to Programming",
+        //	"author": "Marijn Haverbeke",
+        //	"published": "2014-12-14T00:00:00.000Z",
+        //	"publisher": "No Starch Press",
+        //	"pages": 472,
+        //	"description": "JavaScript lies at the heart of almost every modern web application, from social apps to the newest browser-based games.Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications.",
+        //	"website": "http://eloquentjavascript.net/"
+
+        //       }
+        // Fix for CS1519: Replace invalid JSON-like syntax in the Book class with proper C# properties
+        public class Book
+        {
+            public string Isbn { get; set; }
+            public string Title { get; set; }
+            public string Subtitle { get; set; }
+            public string Author { get; set; }
+            public DateTime Published { get; set; }
+            public string Publisher { get; set; }
+            public ulong Pages { get; set; }
+            public string Description { get; set; }
+            public string Website { get; set; }
+        }
+        public class BookCollection
+        {
+            //[JsonProperty("catalogs")]
+            public List<Book> Books { get; set; }
+        }
+
+
+        //KP : public class Catalog as Json
+        //{
+        //  "id": null,
+        //  "name": null,
+        //  "market": null,
+        //  "name": null,
+        //  "isPublishingEnabled": false,
+        //  "isDefault": null,
+        //}
+        public class Catalog
+        {
+            //[JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
+            public ulong Id { get; set; }
+
+            //[JsonProperty("name")]
+            public string Name { get; set; }
+
+            //[JsonProperty("market", DefaultValueHandling = DefaultValueHandling.Ignore)]
+            public string Market { get; set; }
+
+            //[JsonProperty("isPublishingEnabled")]
+            public Boolean IsPublishingEnabled { get; set; }
+
+            //[JsonProperty("isDefault", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+            public Boolean IsDefault { get; set; }
+        }
+
+        public class CatalogCollection
+        {
+            //[JsonProperty("catalogs")]
+            public List<Catalog> Catalogs { get; set; }
         }
 
         [HttpGet]   // GET /api/books
@@ -121,7 +222,18 @@ namespace KPMVCWebAPIs.Controllers
 
             //return Ok(new { Message = input, RouteData = ControllerContext.RouteData.Values });
             //return Ok(new { Message = jsonDeserialize, RouteData = ControllerContext.RouteData.Values });
-            return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values });
+            //return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values });
+
+            string fileContent = string.Empty; // Declare and initialize fileContent
+            using (StreamReader sr = new StreamReader(filePath))
+            {
+                fileContent = sr.ReadToEnd(); // Assign the file content to fileContent
+            }
+
+            Console.WriteLine("KP : Print Books Collection as JSON : ");
+            Console.WriteLine(fileContent);
+            return Ok(new { Message = fileContent, RouteData = ControllerContext.RouteData.Values });
+
         }
 
         [HttpGet("{id}")]   // GET /api/books/xyz
@@ -136,7 +248,11 @@ namespace KPMVCWebAPIs.Controllers
 
             //return Ok(new { Message = input, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = jsonDeserialize, RouteData = ControllerContext.RouteData.Values, Id = id });
-            return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values, Id = id });
+            //return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values, Id = id });
+
+            Console.WriteLine("KP : Print Books Collection as JSON : ");
+            Console.WriteLine(bookCollection.Books);
+            return Ok(new { Message = bookCollection, RouteData = ControllerContext.RouteData.Values, Id = id });
         }
 
         [HttpGet("int/{id:int}")] // GET /api/book/int/3
@@ -151,7 +267,11 @@ namespace KPMVCWebAPIs.Controllers
 
             //return Ok(new { Message = input, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = jsonDeserialize, RouteData = ControllerContext.RouteData.Values, Id = id });
-            return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values, Id = id });
+            //return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values, Id = id });
+
+            Console.WriteLine("KP : Print Books Collection as JSON : ");
+            Console.WriteLine(bookCollection.Books);
+            return Ok(new { Message = bookCollection.Books, RouteData = ControllerContext.RouteData.Values, Id = id });
         }
 
         [HttpGet("int2/{id}")]  // GET /api/books/int2/3
@@ -166,7 +286,11 @@ namespace KPMVCWebAPIs.Controllers
 
             //return Ok(new { Message = input, RouteData = ControllerContext.RouteData.Values, Id = id });
             //return Ok(new { Message = jsonDeserialize, RouteData = ControllerContext.RouteData.Values, Id = id });
-            return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values, Id = id });
+            //return Ok(new { Message = json, RouteData = ControllerContext.RouteData.Values, Id = id });
+
+            Console.WriteLine("KP : Print Books Collection as JSON : ");
+            Console.WriteLine(bookCollection.Books);
+            return Ok(new { Message = bookCollection, RouteData = ControllerContext.RouteData.Values, Id = id });
         }
     }
 }
