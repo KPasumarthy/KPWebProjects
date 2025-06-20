@@ -287,11 +287,11 @@ KPMVCWebAPIs/Controllers/KPWCFServiceClientController.cs
 KPMVCWebAPIs/Literature/KPWCFServices-ClientServiceReference.JPG
 KPMVCWebAPIs/msmq/
 >>>>>>> origin/kpDevBranch
-#/KPMVCWebAPIs/Database/AdventureWorks2022-00.tt.cs.txt
-#/KPMVCWebAPIs/Database/AdventureWorks2022-00.tt.txt
-#/KPMVCWebAPIs/Database/AdventureWorks2022-00Audit.txt
+/KPMVCWebAPIs/Database/AdventureWorks2022-00.tt.cs.txt
+/KPMVCWebAPIs/Database/AdventureWorks2022-00.tt.txt
+/KPMVCWebAPIs/Database/AdventureWorks2022-00Audit.txt
 /KPMVCWebAPIs/Database/AdventureWorks2022.tt
-#/KPMVCWebAPIs/Database/AdventureWorks2022Audit.txt
-/KPMVCWebAPIs/Database/EF.Reverse.POCO.v3.tt
-#/KPMVCWebAPIs/Models/Person00.cs.txt
-#/KPMVCWebAPIs/Database/AdventureWorks2022-00.tt.cs
+/KPMVCWebAPIs/Database/AdventureWorks2022Audit.txt
+#/KPMVCWebAPIs/Database/EF.Reverse.POCO.v3.ttinclude
+/KPMVCWebAPIs/Models/Person00.cs.txt
+/KPMVCWebAPIs/Database/AdventureWorks2022-00.tt.cs
