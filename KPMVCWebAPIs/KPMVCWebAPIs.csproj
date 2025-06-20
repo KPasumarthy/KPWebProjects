@@ -33,11 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Database\AdventureWorks2022-00.tt.cs">
-      <DependentUpon>AdventureWorks2022-00.tt.txt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="Database\AdventureWorks2022.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
