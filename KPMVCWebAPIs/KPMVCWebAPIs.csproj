@@ -38,6 +38,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Database\AdventureWorks2022.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AdventureWorks2022.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

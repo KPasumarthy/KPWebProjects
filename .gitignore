@@ -292,5 +292,6 @@ KPMVCWebAPIs/msmq/
 /KPMVCWebAPIs/Database/AdventureWorks2022-00Audit.txt
 /KPMVCWebAPIs/Database/AdventureWorks2022.tt
 /KPMVCWebAPIs/Database/AdventureWorks2022Audit.txt
-/KPMVCWebAPIs/Database/EF.Reverse.POCO.v3.ttinclude
+#/KPMVCWebAPIs/Database/EF.Reverse.POCO.v3.ttinclude
 /KPMVCWebAPIs/Models/Person00.cs.txt
+/KPMVCWebAPIs/Database/AdventureWorks2022-00.tt.cs
