@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+	
   <ItemGroup>
     <Compile Remove="Controllers\AdventureWorksController.cs" />
     <Compile Remove="Controllers\ASyncPersonsController.cs" />

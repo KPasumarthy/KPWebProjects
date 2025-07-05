@@ -67,8 +67,8 @@ namespace KPMVCWebAPIs.Database
             //return "Server=SARASWATI;Database=master;Trusted_Connection=True;";
             //return "data source=SARADA;Initial Catalog=AdventureWorks2022;Integrated Security=True;";
             //return "Data Source=SARADA;Initial Catalog=AdventureWorks2022;UID = sa; PWD = KPSQLServer2022sysadmin!; TrustServerCertificate=True";
-            return "Data Source=SARADA;Initial Catalog=AdventureWorks2022;Integrated Security=True; TrustServerCertificate=True";
-
+            //return "Data Source=SARADA;Initial Catalog=AdventureWorks2022;Integrated Security=True; TrustServerCertificate=True";
+            return "Data Source=localhost;Initial Catalog=AdventureWorks2022;Integrated Security=True; TrustServerCertificate=True";
 
 
         }
