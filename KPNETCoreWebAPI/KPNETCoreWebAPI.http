@@ -1,0 +1,6 @@
+@KPNETCoreWebAPI_HostAddress = http://localhost:5058
+
+GET {{KPNETCoreWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

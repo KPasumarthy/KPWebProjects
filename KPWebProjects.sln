@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPWCFService", "KPWCFServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPMVCWebAPIs", "KPMVCWebAPIs\KPMVCWebAPIs.csproj", "{F35EED78-4162-4C49-842C-F39ABBA5BDEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPNETCoreWebAPI", "KPNETCoreWebAPI\KPNETCoreWebAPI.csproj", "{40DF3EAD-980B-4626-99B1-C0F0E59B9C25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{F35EED78-4162-4C49-842C-F39ABBA5BDEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F35EED78-4162-4C49-842C-F39ABBA5BDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F35EED78-4162-4C49-842C-F39ABBA5BDEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40DF3EAD-980B-4626-99B1-C0F0E59B9C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40DF3EAD-980B-4626-99B1-C0F0E59B9C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40DF3EAD-980B-4626-99B1-C0F0E59B9C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40DF3EAD-980B-4626-99B1-C0F0E59B9C25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
