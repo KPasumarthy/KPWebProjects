@@ -27,8 +27,8 @@ namespace KPConsole
             String input = "KP : Today's Date : " + currentDate;
             Console.WriteLine(input);
             Console.ReadLine();
-            /////KP : Question : 0
-            ///
+            ///////KP : Question : 0
+
 
 
             /////KP : Question : 1
@@ -64,6 +64,7 @@ namespace KPConsole
             /////////KP : Question : 3
             ///////
 
+
             ///////KP : Question : 4
             ////Write a Funtion to Rotate the given array by K times
 
@@ -77,14 +78,6 @@ namespace KPConsole
             //arrNew.ToList().ForEach(i => Console.Write(i.ToString() + ", "));
             //Console.WriteLine("]");
             ///////KP : Question : 4
-
-            ///////KP : Question : 5
-            //Int64 n = 15;
-            ////KPConsole.Catalogs.KPPrintCatalogs(n);
-            //KPConsole.Catalogs.KPBuildNOrganizeCatalogs();
-            //Console.ReadLine();
-            ///////KP : Question : 5
-
         }
 
         static void Main00(string[] args)
