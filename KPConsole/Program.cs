@@ -20,9 +20,12 @@ namespace KPConsole
 
 
             /////KP : Question : 0
-            Int64 n = 15;
-            //KPConsole.Catalogs.KPPrintCatalogs(n);
-            KPConsole.Catalogs.KPBuildNOrganizeCatalogs();
+            ///Console.WriteLine("KP : Hello Kailash World!");
+            // Getting the string form of the current date
+            // in a format, i.e, 07/27/2024 07:29:00 AM          
+            string currentDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:sss tt");
+            String input = "KP : Today's Date : " + currentDate;
+            Console.WriteLine(input);
             Console.ReadLine();
             /////KP : Question : 0
             ///
@@ -74,6 +77,14 @@ namespace KPConsole
             //arrNew.ToList().ForEach(i => Console.Write(i.ToString() + ", "));
             //Console.WriteLine("]");
             ///////KP : Question : 4
+
+            ///////KP : Question : 5
+            //Int64 n = 15;
+            ////KPConsole.Catalogs.KPPrintCatalogs(n);
+            //KPConsole.Catalogs.KPBuildNOrganizeCatalogs();
+            //Console.ReadLine();
+            ///////KP : Question : 5
+
         }
 
         static void Main00(string[] args)
