@@ -78,6 +78,14 @@ namespace KPConsole
             //arrNew.ToList().ForEach(i => Console.Write(i.ToString() + ", "));
             //Console.WriteLine("]");
             ///////KP : Question : 4
+            
+            ///////KP : Question : 5
+            //Int64 n = 15;
+            ////KPConsole.Catalogs.KPPrintCatalogs(n);
+            //KPConsole.Catalogs.KPBuildNOrganizeCatalogs();
+            //Console.ReadLine();
+            ///////KP : Question : 5
+
         }
 
         static void Main00(string[] args)
