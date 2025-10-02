@@ -32,27 +32,14 @@ namespace KPConsole
             try
             {
 
-                string sourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\\..\\KPConsole\KPWUSemaphore.txt");
-                string destinationPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\\..\\KPWUSemaphore.txt");
                 string basePath = AppDomain.CurrentDomain.BaseDirectory;
                 string kpWUSemaphoreFilePath = null;
 
-               Console.WriteLine("Current Working Directory: sourcePath : " + sourcePath);
-               Console.WriteLine("Current Working Directory: destinationPath : " + destinationPath);
                Console.WriteLine("Current Working Directory: basePath : " + basePath);
 
                 string currentDirectory = Directory.GetCurrentDirectory();
                 Console.WriteLine("Current Working Directory: " + currentDirectory);
 
-                if (File.Exists(sourcePath))
-                {
-                    File.Copy(sourcePath, destinationPath, true); // The 'true' allows overwriting
-                }
-                else
-                {
-                    // Handle case where source file doesn't exist
-                    Console.WriteLine("Source file not found: " + sourcePath);
-                }
 
 
                 // Get the current working directory
@@ -72,25 +59,8 @@ namespace KPConsole
                 }
 
 
-                string[] originalArray = { "apple", "banana", "cherry", "date", "elderberry", "fig" };
-                // Drop the last three elements using Take()
-                string[] newArray = originalArray.Take(originalArray.Length - 3).ToArray();
-
-                Console.WriteLine("Original Array:");
-                foreach (string s in originalArray)
-                {
-                    Console.WriteLine(s);
-                }
-
-                Console.WriteLine("\nNew Array (last three elements dropped):");
-                foreach (string s in newArray)
-                {
-                    Console.WriteLine(s);
-                }
-          
-
                 // Remove the last 3 folders from the directory path using the platform-specific directory separator character
-                string[] kpWUSemaphoreFilePathDirParts = currentDirectory.Split(Path.DirectorySeparatorChar).Take(originalArray.Length - 2).ToArray(); ;
+                string[] kpWUSemaphoreFilePathDirParts = currentDirectory.Split(Path.DirectorySeparatorChar).Take(directoryParts.Length - 3).ToArray(); ;
                 Console.WriteLine("\nKPWUSemaphoreFilePathDirectory Parts:");
                 foreach (string part in kpWUSemaphoreFilePathDirParts)
                 {
@@ -104,11 +74,9 @@ namespace KPConsole
                 }
 
 
-
-
+                string sourcePath = kpWUSemaphoreFilePath + "\\KPWUSemaphore.txt";
 
                 //Pass the file path and file name to the StreamReader constructor
-                //StreamReader sr = new StreamReader("C:\\Sample.txt");
                 //StreamReader sr = new StreamReader("C:\\Projects\\KPWebProjects\\KPConsole\\KPWUSemaphore.txt");
 
                 StreamReader sr = new StreamReader(kpWUSemaphoreFilePath + "\\KPWUSemaphore.txt");

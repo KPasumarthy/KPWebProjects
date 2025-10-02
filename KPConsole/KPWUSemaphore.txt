@@ -1,3 +1,6 @@
+
+
+
 /***KP : Western Union Interview - Pat Ford!!!***/
 
 #include <stdio.h>
@@ -46,8 +49,8 @@ void consumer(void arg) {
  
         int item = buffer[out];
         printf("Consumed: %d from %d\n", item, out);
-        out = (out + 1);          /*** KP : Actual Code with a Bug "" out = (out + 1); "" ***/           
-        /*** KP : Solution Fix  "out = (out + 1) % BUFFERSIZE;"" ***/        
+        out = (out + 1);          /***       KP : Actual Code with a Bug "" out = (out + 1); ""        ***/           
+        /***    KP : Solution Fix  "  out = (out + 1) % BUFFERSIZE;  "   ***/        
 
         pthreadmutexunlock(&mutex);
         sempost(&emptyslots);
