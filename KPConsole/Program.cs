@@ -16,7 +16,7 @@ namespace KPConsole
 
         static void Main(string[] args)
         {
-            Console.WriteLine("KP : Hello Kailash World!");
+            Console.WriteLine("KP : Hello World :  Pat Ford :  Western Union !");
 
 
             /////KP : Question : 0
@@ -26,65 +26,119 @@ namespace KPConsole
             string currentDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:sss tt");
             String input = "KP : Today's Date : " + currentDate;
             Console.WriteLine(input);
+
+            //// KP : Read a Legacy C File and Fix the Bug : 
+            String line;
+            try
+            {
+
+                string sourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\\..\\KPConsole\KPWUSemaphore.txt");
+                string destinationPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\\..\\KPWUSemaphore.txt");
+                string basePath = AppDomain.CurrentDomain.BaseDirectory;
+                string kpWUSemaphoreFilePath = null;
+
+               Console.WriteLine("Current Working Directory: sourcePath : " + sourcePath);
+               Console.WriteLine("Current Working Directory: destinationPath : " + destinationPath);
+               Console.WriteLine("Current Working Directory: basePath : " + basePath);
+
+                string currentDirectory = Directory.GetCurrentDirectory();
+                Console.WriteLine("Current Working Directory: " + currentDirectory);
+
+                if (File.Exists(sourcePath))
+                {
+                    File.Copy(sourcePath, destinationPath, true); // The 'true' allows overwriting
+                }
+                else
+                {
+                    // Handle case where source file doesn't exist
+                    Console.WriteLine("Source file not found: " + sourcePath);
+                }
+
+
+                // Get the current working directory
+                //string currentDirectory = Directory.GetCurrentDirectory();
+                Console.WriteLine($"Current Directory: {currentDirectory}");
+
+                // Split the directory path using the platform-specific directory separator character
+                string[] directoryParts = currentDirectory.Split(Path.DirectorySeparatorChar);
+
+                Console.WriteLine("\nDirectory Parts:");
+                foreach (string part in directoryParts)
+                {
+                    if (!string.IsNullOrEmpty(part)) // Filter out empty strings that might result from splitting
+                    {
+                        Console.WriteLine(part);
+                    }
+                }
+
+
+                string[] originalArray = { "apple", "banana", "cherry", "date", "elderberry", "fig" };
+                // Drop the last three elements using Take()
+                string[] newArray = originalArray.Take(originalArray.Length - 3).ToArray();
+
+                Console.WriteLine("Original Array:");
+                foreach (string s in originalArray)
+                {
+                    Console.WriteLine(s);
+                }
+
+                Console.WriteLine("\nNew Array (last three elements dropped):");
+                foreach (string s in newArray)
+                {
+                    Console.WriteLine(s);
+                }
+          
+
+                // Remove the last 3 folders from the directory path using the platform-specific directory separator character
+                string[] kpWUSemaphoreFilePathDirParts = currentDirectory.Split(Path.DirectorySeparatorChar).Take(originalArray.Length - 2).ToArray(); ;
+                Console.WriteLine("\nKPWUSemaphoreFilePathDirectory Parts:");
+                foreach (string part in kpWUSemaphoreFilePathDirParts)
+                {
+                    if (!string.IsNullOrEmpty(part)) // Filter out empty strings that might result from splitting
+                    {
+                        //Console.WriteLine(part);
+                        //kpWUSemaphoreFilePath = kpWUSemaphoreFilePath + @"\" + part;
+                        kpWUSemaphoreFilePath += part + @"\" ;
+                        Console.WriteLine(kpWUSemaphoreFilePath);
+                    }
+                }
+
+
+
+
+
+                //Pass the file path and file name to the StreamReader constructor
+                //StreamReader sr = new StreamReader("C:\\Sample.txt");
+                //StreamReader sr = new StreamReader("C:\\Projects\\KPWebProjects\\KPConsole\\KPWUSemaphore.txt");
+
+                StreamReader sr = new StreamReader(kpWUSemaphoreFilePath + "\\KPWUSemaphore.txt");
+                //Read the first line of text
+                line = sr.ReadLine();
+                //Continue to read until you reach end of file
+                while (line != null)
+                {
+                    //write the line to console window
+                    Console.WriteLine(line);
+                    //Read the next line
+                    line = sr.ReadLine();
+                }
+                //close the file
+                sr.Close();
+                Console.ReadLine();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Executing finally block.");
+            }
+
+
             Console.ReadLine();
             ///////KP : Question : 0
 
-
-
-            /////KP : Question : 1
-            //int a, b = 0;
-            //a = 5;
-            //b += a;     //b = b+a; b = 0+5 = 5
-            //Console.WriteLine("Opeartion : b += a");
-            //Console.WriteLine("a = " + a);
-            //Console.WriteLine("b = " + b);
-
-            /////KP : Question : 1
-
-            ////////KP : Question : 2
-            //var arr = new List<int>() { 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }.ToArray();
-            //////{ 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }
-            //////{-25, -4, - 1, - 1, 1, 9, 10, 10, 12, 15, 22, 33, 33, 33, 34, 55, 81, 90, 98, 100, 125 }
-
-            //int target = 100;
-            //IList<IList<int>> triplets = ThreeSum(arr, target);
-
-            //foreach (var item in triplets)
-            //{
-            //    Console.WriteLine(item[0].ToString() + "," + item[1].ToString() + "," + item[2].ToString());
-            //}
-            //Console.ReadLine();
-            ///////KP : Question : 2
-
-            /////////KP : Question : 3
-            ////Int64 n = 15;
-            //////PrintFizzBuzz(n);
-            //FizzBuzz.PrintFizzBuzz(n);
-            //FizzBuzz.PrintFizzBuzzComplex(n);
-            /////////KP : Question : 3
-            ///////
-
-
-            ///////KP : Question : 4
-            ////Write a Funtion to Rotate the given array by K times
-
-            ////Input  : arr[] = { 1, 2, 3, 4, 5 }
-            ////K = 3
-            ////Output: { 4, 5, 1, 2, 3}
-            //int[] arr = { 1, 2, 3, 4, 5 };
-            //int k = 3;
-            //int[] arrNew = rotateArray(arr, k);
-            //Console.Write("[");
-            //arrNew.ToList().ForEach(i => Console.Write(i.ToString() + ", "));
-            //Console.WriteLine("]");
-            ///////KP : Question : 4
-            
-            ///////KP : Question : 5
-            //Int64 n = 15;
-            ////KPConsole.Catalogs.KPPrintCatalogs(n);
-            //KPConsole.Catalogs.KPBuildNOrganizeCatalogs();
-            //Console.ReadLine();
-            ///////KP : Question : 5
 
         }
 

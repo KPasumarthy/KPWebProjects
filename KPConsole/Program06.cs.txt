@@ -1,0 +1,183 @@
+﻿using System;
+using System.Reflection;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using WebGrease.Css.Ast.Selectors;
+using Microsoft.Ajax.Utilities;
+using System.Collections;
+using Newtonsoft.Json;
+using System.Net;
+
+namespace KPConsole
+{
+    class Program06
+    {
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("KP : Hello Kailash World!");
+
+
+            /////KP : Question : 0
+            ///Console.WriteLine("KP : Hello Kailash World!");
+            // Getting the string form of the current date
+            // in a format, i.e, 07/27/2024 07:29:00 AM          
+            string currentDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:sss tt");
+            String input = "KP : Today's Date : " + currentDate;
+            Console.WriteLine(input);
+            Console.ReadLine();
+            ///////KP : Question : 0
+
+
+
+            /////KP : Question : 1
+            //int a, b = 0;
+            //a = 5;
+            //b += a;     //b = b+a; b = 0+5 = 5
+            //Console.WriteLine("Opeartion : b += a");
+            //Console.WriteLine("a = " + a);
+            //Console.WriteLine("b = " + b);
+
+            /////KP : Question : 1
+
+            ////////KP : Question : 2
+            //var arr = new List<int>() { 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }.ToArray();
+            //////{ 33, 34, -1, 10, 81, 9, -1, 33, -4, 12, 100, -25, 125, 98, 1, 15, 10, 90, 1, 22, 33, 55 }
+            //////{-25, -4, - 1, - 1, 1, 9, 10, 10, 12, 15, 22, 33, 33, 33, 34, 55, 81, 90, 98, 100, 125 }
+
+            //int target = 100;
+            //IList<IList<int>> triplets = ThreeSum(arr, target);
+
+            //foreach (var item in triplets)
+            //{
+            //    Console.WriteLine(item[0].ToString() + "," + item[1].ToString() + "," + item[2].ToString());
+            //}
+            //Console.ReadLine();
+            ///////KP : Question : 2
+
+            /////////KP : Question : 3
+            ////Int64 n = 15;
+            //////PrintFizzBuzz(n);
+            //FizzBuzz.PrintFizzBuzz(n);
+            //FizzBuzz.PrintFizzBuzzComplex(n);
+            /////////KP : Question : 3
+            ///////
+
+
+            ///////KP : Question : 4
+            ////Write a Funtion to Rotate the given array by K times
+
+            ////Input  : arr[] = { 1, 2, 3, 4, 5 }
+            ////K = 3
+            ////Output: { 4, 5, 1, 2, 3}
+            //int[] arr = { 1, 2, 3, 4, 5 };
+            //int k = 3;
+            //int[] arrNew = rotateArray(arr, k);
+            //Console.Write("[");
+            //arrNew.ToList().ForEach(i => Console.Write(i.ToString() + ", "));
+            //Console.WriteLine("]");
+            ///////KP : Question : 4
+            
+            ///////KP : Question : 5
+            //Int64 n = 15;
+            ////KPConsole.Catalogs.KPPrintCatalogs(n);
+            //KPConsole.Catalogs.KPBuildNOrganizeCatalogs();
+            //Console.ReadLine();
+            ///////KP : Question : 5
+
+        }
+
+        static void Main00(string[] args)
+        {
+            Console.WriteLine("KP : Hello Kailash World!");
+
+            ///Question
+            ///
+
+            // Getting the string form of the current date
+            // in a format, i.e, 07/27/2024 07:29:00 AM          
+            string currentDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:sss tt");
+            String input = "KP : Today's Date : " + currentDate;
+            bool output = TestFunction(input);
+
+            ////KP : Console Wait to ReadLine
+            Console.ReadLine();
+        }
+
+
+        //static void Main()
+        //{
+        //    //    ////KP : Console WriteLine
+        //    Console.WriteLine("KP : Hello Kailash World!");
+
+        //    //    ////KP : Console Wait to ReadLine
+        //    Console.ReadLine();
+        //}
+
+
+        static bool TestFunction(String input)
+        {
+
+            Console.WriteLine(input);
+
+            ///////*/////KP : Question : PrintFizzBuzz
+            Int64 n = 20;
+            //PrintFizzBuzz(n);
+            FizzBuzz.PrintFizzBuzz(n);
+            FizzBuzz.PrintFizzBuzzComplex(n);
+            /////////KP : Question : PrintFizzBuzz///*/
+
+
+            /////////*/////KP : Question : Interview Questions
+            InterviewQuestions.PrintInterviewQuestions();
+            /////////*/////KP : Question : Interview Questions
+            /////////
+
+
+            ///////////*/////KP : Question : Interview Questions : DemoEnum
+            DemoEnum.PrintDemoEnum();
+            ///////////*/////KP : Question : Interview Questions : DemoEnum
+            /////////
+
+
+            /////////*/////KP : Question : Interview Questions : DemoStatic
+            DemoStatic t = new DemoStatic();
+            t.Print();
+            /////////*/////KP : Question : Interview Questions : DemoStatic
+            ///////
+
+
+            /////*/////KP : Question : Interview Questions : PrintValue
+            Console.WriteLine("KP : InterviewQuestion : What is the Ouput of the PrintValue Program ? ");
+            PrintValue t1 = new PrintValue();
+            t1.Print();
+            /////*/////KP : Question : Interview Questions : PrintValue
+            ///
+
+
+            /////*/////KP : Question : Interview Questions : Print Fibonacci Series
+            Console.WriteLine("KP : InterviewQuestion : Print Fibonacci Series for n Elements ");
+            //Int64 n = 25;
+            Fibonacci.PrintFibonacciSeries(n);
+
+            /////*/////KP : Question : Interview Questions : Print Fibonacci Series
+            ///
+
+
+
+            ///////*/////KP : Question : PrintIntegers.PrintIntegerValue()
+            PrintIntegers.PrintIntegerValue();
+            Console.WriteLine("KP : PrintIntegers.GetEven() : Even Numbers : [ " + String.Join(", ", PrintIntegers.GetEven(n).ToArray()) + " ]");
+            Console.WriteLine("KP : PrintIntegers.GetOdd()  : Odd Numbers  : [ " + String.Join(", ", PrintIntegers.GetOdd(n).ToArray()) + " ]");
+            /////////KP : Question : PrintIntegers.PrintIntegerValue()///*/
+
+
+
+
+            return true;
+        }
+
+    }
+}
+
