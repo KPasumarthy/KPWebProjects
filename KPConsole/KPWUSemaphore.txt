@@ -1,0 +1,90 @@
+
+
+
+/***KP : Western Union Interview - Pat Ford!!!***/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <semaphore.h>
+#include <unistd.h>
+ 
+#define BUFFERSIZE 5
+#define NUMITEMS 10
+ 
+int buffer[BUFFERSIZE];
+int in = 0, out = 0;
+
+semt emptyslots;
+semt fullslots;
+pthreadmutext mutex;
+ 
+void producer(void arg) {
+    for (int i = 0; i < NUMITEMS; i++) {
+        int item = rand() % 100;  ///KP : mod operator. For example 171 / 100 = 71
+ 
+        semwait(&emptyslots);           //
+        pthreadmutexlock(&mutex);
+ 
+        buffer[in] = item;      //KP : item = 71
+        printf("KP : Produced: %d at %d\n", item, in);
+        in = (in + 1) % BUFFERSIZE;
+ 
+        pthreadmutexunlock(&mutex);
+
+        sempost(&fullslots);
+        printf("KP :What is posted here ??? &fullslots ; Making Availabe  %d\n", item, in);
+ 
+        usleep(100000); // simulate work
+    }
+    pthreadexit(NULL);
+}
+ 
+void consumer(void arg) {
+    for (int i = 0; i < NUMITEMS; i++) {
+        semwait(&fullslots);
+        printf("KP :What is semwait(&fullslots) doing?? : Waiting for buffer to fill ??? &fullslots ; Making Availabe  %d\n", &fullslots, in);
+ 
+        pthreadmutexlock(&mutex);
+ 
+        int item = buffer[out];
+        printf("Consumed: %d from %d\n", item, out);
+        out = (out + 1);          /***       KP : Actual Code with a Bug "" out = (out + 1); ""        ***/           
+        /***    KP : Solution Fix  "  out = (out + 1) % BUFFERSIZE;  "   ***/        
+
+        pthreadmutexunlock(&mutex);
+        sempost(&emptyslots);
+ 
+        usleep(150000); // simulate work
+    }
+    pthreadexit(NULL);
+}
+ 
+int main() {
+    pthreadt prodthread, consthread;
+
+    seminit(&emptyslots, 0, BUFFERSIZE);        ///KP :: What is the value of emptyslots : Assumed ??    
+    printf(&emptyslots); /// KP : Print the Value of &emptyslots
+    
+    seminit(&fullslots, 0, 0);
+    printf(&fullslots); /// KP : Print the Value of &emptyslots
+
+    pthreadmutexinit(&mutex, NULL); 
+    printf(&mutex); /// KP : Print the Value of  &mutex
+
+    pthreadcreate(&prodthread, NULL, producer, NULL);
+    printf(&prodthread); /// KP : Print the Value of  &prodthread ID
+
+    pthreadcreate(&consthread, NULL, consumer, NULL);
+    printf(&consthread); /// KP : Print the Value of &consthread ID
+ 
+    pthreadjoin(prodthread, NULL);      //KP : Who is joining ? : NULL args
+    pthreadjoin(consthread, NULL);
+ 
+    semdestroy(&emptyslots);
+    semdestroy(&fullslots);
+    pthreadmutexdestroy(&mutex);
+ 
+    return 0;
+}
+ 
