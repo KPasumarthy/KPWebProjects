@@ -16,7 +16,7 @@ namespace KPConsole
 
         static void Main(string[] args)
         {
-            Console.WriteLine("KP : Hello World :  Pat Ford :  Western Union !");
+            Console.WriteLine("KP : Hello World :  MS.NET Interview Q&A !");
 
 
             /////KP : Question : 0
@@ -28,11 +28,7 @@ namespace KPConsole
             Console.WriteLine(input);
 
 
-            bool iskpWUSemaphoreFileRead = readkpWUSemaphoreFile();
-            Console.WriteLine("KP : iskpWUSemaphoreFileRead =  " + iskpWUSemaphoreFileRead);
-
-
-            Console.ReadLine();
+             Console.ReadLine();
             ///////KP : Question : 0
 
 
@@ -122,6 +118,12 @@ namespace KPConsole
             Console.WriteLine("KP : PrintIntegers.GetOdd()  : Odd Numbers  : [ " + String.Join(", ", PrintIntegers.GetOdd(n).ToArray()) + " ]");
             /////////KP : Question : PrintIntegers.PrintIntegerValue()///*/
 
+
+
+            ///////*/////KP : Question : Read SemaphoreFile
+            ////bool iskpWUSemaphoreFileRead = readkpWUSemaphoreFile();
+            ////Console.WriteLine("KP : iskpWUSemaphoreFileRead =  " + iskpWUSemaphoreFileRead);
+            ///////*/////KP : Question : Read SemaphoreFile
 
 
 
