@@ -16,7 +16,7 @@ namespace KPConsole
 
         static void Main(string[] args)
         {
-            Console.WriteLine("KP : Hello World :  Pat Ford :  Western Union !");
+            Console.WriteLine("KP : Hello World !");
 
 
             /////KP : Question : 0
@@ -28,13 +28,16 @@ namespace KPConsole
             Console.WriteLine(input);
 
 
-            bool iskpWUSemaphoreFileRead = readkpWUSemaphoreFile();
-            Console.WriteLine("KP : iskpWUSemaphoreFileRead =  " + iskpWUSemaphoreFileRead);
+            ////Microsoft .NET  Data-Types int & Strings  : Immutable
+            Console.WriteLine("KP : Microsoft .NET Data-Types int & Strings ' : " + 10 + 20);
+            Console.WriteLine(10 + 20 + "KP : Microsoft .NET Data-Types int & Strings ' : " + 10 + 20);
+            Console.WriteLine(10 + 20 + "KP : Microsoft .NET  Data-Types int & Strings ' : " + 10 + 20 + 'a' + "bcd");
 
+            //bool iskpWUSemaphoreFileRead = readkpWUSemaphoreFile();
+            //Console.WriteLine("KP : iskpWUSemaphoreFileRead =  " + iskpWUSemaphoreFileRead);
 
             Console.ReadLine();
             ///////KP : Question : 0
-
 
         }
 
