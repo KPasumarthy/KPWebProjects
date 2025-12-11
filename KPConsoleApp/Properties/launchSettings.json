@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "KPConsoleApp": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

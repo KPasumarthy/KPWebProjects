@@ -33,9 +33,6 @@ namespace KPConsole
             Console.WriteLine(10 + 20 + "KP : Microsoft .NET Data-Types int & Strings ' : " + 10 + 20);
             Console.WriteLine(10 + 20 + "KP : Microsoft .NET  Data-Types int & Strings ' : " + 10 + 20 + 'a' + "bcd");
 
-            //bool iskpWUSemaphoreFileRead = readkpWUSemaphoreFile();
-            //Console.WriteLine("KP : iskpWUSemaphoreFileRead =  " + iskpWUSemaphoreFileRead);
-
             Console.ReadLine();
             ///////KP : Question : 0
 
