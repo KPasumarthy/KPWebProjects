@@ -33,6 +33,12 @@ namespace KPConsole
             Console.WriteLine(10 + 20 + "KP : Microsoft .NET Data-Types int & Strings ' : " + 10 + 20);
             Console.WriteLine(10 + 20 + "KP : Microsoft .NET  Data-Types int & Strings ' : " + 10 + 20 + 'a' + "bcd");
 
+
+            ////Microsoft .NET Out & Ref Variable
+            RefOutParam objRefOutParam = new RefOutParam();
+            RefOutParam.PrintRefOutParam();
+
+
             Console.ReadLine();
             ///////KP : Question : 0
 
